@@ -28,7 +28,18 @@ npm run lint
 | `components/StoryPicker.tsx` | Interaktív demó: a látogató kiválasztja a mai mesét |
 | `components/CategoryPicker.tsx` | Kategória-választó, a választás `localStorage`-ban marad |
 | `components/usePreferences.ts` | `useSyncExternalStore` alapú kategória-tároló |
-| `lib/content.ts` | Kategóriák, demó mesék, GYIK szövegek – ezeket kell szerkeszteni tartalomhoz |
+| `lib/content.ts` | Kategóriák, demó mesék, GYIK szövegek, márkaadatok (FB-link, szlogen) |
+| `public/` | Márkagrafikák a Facebook-oldalról: `logo.webp` (profilkép átlátszó háttérrel), `meseles.jpg` (a borító középső illusztrációja), `borito.jpg` (teljes borító), `og.jpg` (megosztási kép) |
+
+## Arculat
+
+A paletta és a képek a Facebook-oldal grafikáiról készültek
+(https://www.facebook.com/zsuzsinenimesei/). Az eredeti, vágatlan fájlok helye:
+`C:\Users\csana\Documents\zsuzsinenimesei`.
+
+- **Színek** (`app/globals.css`, `@theme`): éjkék `#0E2039`–`#233550`, krém `#FBF3E4`,
+  arany `#D9932A` / `#F5CB84`
+- **Betűk**: Baloo 2 (címek), Nunito (szöveg), Caveat (kézírásos szlogen)
 
 ## Környezeti változók
 

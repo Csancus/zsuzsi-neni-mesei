@@ -36,7 +36,7 @@ export function StoryPicker() {
                 </span>
               </div>
 
-              <h3 className="mt-4 font-display text-xl font-semibold leading-snug">
+              <h3 className="mt-4 font-display text-xl font-bold leading-snug">
                 {story.title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">

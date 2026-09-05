@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { site } from "@/lib/content";
 import { Logo } from "./Logo";
 
 const links = [
@@ -33,7 +34,18 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href={site.facebook}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook oldal"
+            className="hidden size-10 place-items-center rounded-full text-cream/70 ring-1 ring-white/15 transition hover:text-cream sm:grid"
+          >
+            <svg viewBox="0 0 24 24" className="size-4.5" fill="currentColor" aria-hidden>
+              <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z" />
+            </svg>
+          </a>
           <a
             href="#regisztracio"
             className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-night-900 transition hover:bg-gold-soft sm:inline-block"

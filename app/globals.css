@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-night-900: #060A1A;
-  --color-night-800: #0C1330;
-  --color-night-700: #141D45;
-  --color-night-600: #1F2B62;
-  --color-cream: #FDF7EE;
-  --color-cream-200: #F4E8D6;
-  --color-cream-300: #E7D6BC;
-  --color-ink: #1A1930;
-  --color-ink-soft: #4A4763;
-  --color-gold: #E9A227;
-  --color-gold-soft: #FFD98E;
-  --color-lilac: #A99BFF;
+  /* Márkaszínek a Facebook-borítóról és a profilképről mintázva */
+  --color-night-900: #0E2039;
+  --color-night-800: #16304F;
+  --color-night-700: #233550;
+  --color-night-600: #35527C;
+  --color-cream: #FBF3E4;
+  --color-cream-200: #F4E7CF;
+  --color-cream-300: #E4D2B2;
+  --color-ink: #1C2E4A;
+  --color-ink-soft: #57647E;
+  --color-gold: #D9932A;
+  --color-gold-soft: #F5CB84;
 
-  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-display), "Trebuchet MS", ui-rounded, sans-serif;
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-hand: var(--font-hand), "Segoe Script", cursive;
 }
 
 :root {
@@ -46,13 +47,22 @@ body {
     radial-gradient(1.5px 1.5px at 88% 66%, rgba(255, 255, 255, 0.7), transparent 60%),
     radial-gradient(1.3px 1.3px at 8% 82%, rgba(255, 243, 214, 0.6), transparent 60%),
     radial-gradient(1.4px 1.4px at 54% 86%, rgba(255, 255, 255, 0.6), transparent 60%),
-    radial-gradient(1200px 600px at 78% -10%, rgba(169, 155, 255, 0.28), transparent 65%),
-    radial-gradient(900px 500px at 10% 110%, rgba(233, 162, 39, 0.16), transparent 60%),
-    linear-gradient(180deg, #060A1A 0%, #101838 55%, #0A1128 100%);
+    radial-gradient(1100px 620px at 80% -8%, rgba(53, 82, 124, 0.55), transparent 65%),
+    radial-gradient(900px 500px at 8% 108%, rgba(217, 147, 42, 0.18), transparent 60%),
+    linear-gradient(180deg, #0E2039 0%, #1B355A 55%, #10233E 100%);
+}
+
+/* Kézzel rajzolt aranycsillagok, mint a borítón */
+.stars-strip {
+  background-image:
+    radial-gradient(2px 2px at 10% 40%, var(--color-gold-soft), transparent 60%),
+    radial-gradient(2px 2px at 34% 70%, var(--color-gold-soft), transparent 60%),
+    radial-gradient(2px 2px at 62% 30%, var(--color-gold-soft), transparent 60%),
+    radial-gradient(2px 2px at 86% 62%, var(--color-gold-soft), transparent 60%);
 }
 
 .card-glow {
-  box-shadow: 0 24px 60px -30px rgba(10, 14, 40, 0.55);
+  box-shadow: 0 24px 60px -30px rgba(14, 32, 57, 0.5);
 }
 
 @keyframes float-slow {

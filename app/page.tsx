@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 import { CategoryPicker } from "@/components/CategoryPicker";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SignupForm } from "@/components/SignupForm";
 import { StoryPicker } from "@/components/StoryPicker";
-import { faq } from "@/lib/content";
+import { faq, site } from "@/lib/content";
 
 const steps = [
   {
@@ -23,17 +25,31 @@ const steps = [
   },
 ];
 
+/* A négy ígéret a Facebook-borítóról */
+const promises = [
+  {
+    icon: "🧡",
+    title: "Személyre szabható kategóriák",
+    body: "Kalandok, állatok, természet, barátság, tanulságos mesék – te mondod meg, miből válogassunk.",
+  },
+  {
+    icon: "⭐",
+    title: "Minden nap 3 mese, te választasz",
+    body: "Nem egy kötelező mese érkezik, hanem három lehetőség. A döntés a tiétek.",
+  },
+  {
+    icon: "🌱",
+    title: "Nyugodtabb esték",
+    body: "Nincs több kapkodás fél nyolckor azon, hogy mit meséljetek. Kész válogatás vár, mire hazaértek.",
+  },
+  {
+    icon: "🌈",
+    title: "Boldogabb gyerekek",
+    body: "A gyerek beleszólhat az esti rutinba – ettől jobban is várja a lefekvést.",
+  },
+];
+
 const benefits = [
-  {
-    emoji: "🕗",
-    title: "Nem kell esténként ötletelni",
-    body: "A „na, mit meséljek ma?” kérdés lekerül a válladról. Kész válogatás vár, mire hazaértek.",
-  },
-  {
-    emoji: "🙋",
-    title: "A gyerek is dönt",
-    body: "A választás élménye önmagában segít a lefekvésnél: nem rá esik valami, hanem ő kér valamit.",
-  },
   {
     emoji: "⏱️",
     title: "Tudod, mennyi idő",
@@ -45,7 +61,12 @@ const benefits = [
     body: "A telefon nálad marad, a gyerek csak a hangodat hallja. Se villogás, se automatikus következő rész.",
   },
   {
-    emoji: "🌱",
+    emoji: "🌙",
+    title: "Elalvásra hangolva",
+    body: "A meséknek nem izgalmas félbeszakítás a vége. Lekerekített, megnyugtató lezárás, ami után le lehet kapcsolni a villanyt.",
+  },
+  {
+    emoji: "🎒",
     title: "Veletek együtt változik",
     body: "Ahogy nő a gyerek és jönnek az új témák, a válogatás is követi – elég átállítanod a kategóriákat.",
   },
@@ -53,6 +74,11 @@ const benefits = [
     emoji: "✍️",
     title: "Eredeti mesék",
     body: "Minden szöveg saját írás, magyarul, gyerekhangra hangolva – nem netről összeszedett anyag.",
+  },
+  {
+    emoji: "💌",
+    title: "Nem app, csak egy e-mail",
+    body: "Nem kell letölteni semmit, és nem kell fiókot nyitogatni esténként. Megérkezik, megnyitod, olvasol.",
   },
 ];
 
@@ -73,24 +99,28 @@ export default function Home() {
       <main className="flex-1">
         {/* ---------- Hero ---------- */}
         <section className="starfield relative overflow-hidden text-cream">
-          <div className="relative mx-auto grid w-full max-w-6xl gap-14 px-5 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+          <div className="relative mx-auto grid w-full max-w-6xl gap-14 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium tracking-wide ring-1 ring-white/20">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide ring-1 ring-white/20">
                 <span aria-hidden>✨</span> 10 nap ingyen, bankkártya nélkül
               </span>
 
-              <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
                 Minden este három mese.
                 <br />
                 <span className="text-gold-soft">A gyerek választ egyet.</span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/75">
+              <p className="mt-5 font-hand text-2xl text-cream/85 sm:text-[1.7rem]">
+                {site.tagline}
+              </p>
+
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
                 Nem kell többé fejből kitalálni, mit meséljetek. Naponta küldünk három
                 friss, eredeti esti mesét – ti eldöntitek, melyik kerül ma sorra.
               </p>
 
-              <div className="mt-9 max-w-xl">
+              <div className="mt-8 max-w-xl">
                 <SignupForm variant="dark" />
               </div>
 
@@ -107,39 +137,94 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Telefonos előnézet */}
-            <div className="relative mx-auto w-full max-w-sm">
-              <div className="float-slow rounded-[2.2rem] bg-white/10 p-3 ring-1 ring-white/20 backdrop-blur-sm">
-                <div className="rounded-[1.7rem] bg-cream p-5 text-ink">
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-ink-soft">
-                    Ma este
-                  </p>
-                  <p className="mt-1 font-display text-lg font-semibold">
-                    Melyiket olvassuk?
-                  </p>
+            {/* Márkaillusztráció + a napi hármas előnézete */}
+            <div className="relative mx-auto w-full max-w-md pb-40 sm:pb-44 lg:pb-36">
+              <Image
+                src="/logo.webp"
+                alt="Kislány a paplan alatt, mackóval és csillagos mesekönyvvel – Esti Mesék"
+                width={640}
+                height={640}
+                priority
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="float-slow w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
+              />
 
-                  <div className="mt-4 space-y-2.5">
-                    <PreviewRow emoji="🌙" title="A hold, aki elaludt" meta="6 perc · elalvós" />
-                    <PreviewRow
-                      emoji="🗺️"
-                      title="Bátor Bogyó és a viharos tó"
-                      meta="9 perc · kalandos"
-                      active
-                    />
-                    <PreviewRow
-                      emoji="💛"
-                      title="Miért mérges a kis sárkány?"
-                      meta="7 perc · érzésekről"
-                    />
-                  </div>
+              <div className="absolute bottom-0 left-0 w-64 rounded-3xl bg-cream p-4 text-ink shadow-2xl ring-1 ring-night-900/10 sm:w-72 sm:p-5">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-ink-soft">
+                  Ma este
+                </p>
+                <p className="mt-0.5 font-display text-base font-bold sm:text-lg">
+                  Melyiket olvassuk?
+                </p>
 
-                  <div className="mt-5 rounded-2xl bg-night-900 px-4 py-3 text-center text-sm font-semibold text-cream">
-                    Olvasás indítása
-                  </div>
+                <div className="mt-3 space-y-2">
+                  <PreviewRow emoji="🌙" title="A hold, aki elaludt" meta="6 perc · elalvós" />
+                  <PreviewRow
+                    emoji="🗺️"
+                    title="Bátor Bogyó és a viharos tó"
+                    meta="9 perc · kalandok"
+                    active
+                  />
+                  <PreviewRow
+                    emoji="💛"
+                    title="Miért mérges a kis sárkány?"
+                    meta="7 perc · érzésekről"
+                  />
                 </div>
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ---------- Négy ígéret ---------- */}
+        <section className="bg-cream py-16 lg:py-20">
+          <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div className="card-glow overflow-hidden rounded-[2rem] ring-1 ring-cream-300">
+              <Image
+                src="/meseles.jpg"
+                alt="Anya és kisgyerek esti mesét olvasnak az ágyban, mackóval és alvó kutyával"
+                width={1300}
+                height={1040}
+                sizes="(min-width: 1024px) 46vw, 92vw"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-gold">
+                Amit kaptok
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">
+                Meséljünk együtt minden este
+              </h2>
+
+              <ul className="mt-8 space-y-5">
+                {promises.map((p) => (
+                  <li key={p.title} className="flex gap-4">
+                    <span
+                      aria-hidden
+                      className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-full bg-cream-200 text-lg"
+                    >
+                      {p.icon}
+                    </span>
+                    <span>
+                      <span className="block font-display text-lg font-bold">{p.title}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-ink-soft">
+                        {p.body}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ---------- Idézet ---------- */}
+        <section className="starfield stars-strip py-14 text-cream">
+          <p className="mx-auto max-w-3xl px-5 text-center font-hand text-3xl leading-snug text-gold-soft sm:text-4xl">
+            {site.quote}
+          </p>
         </section>
 
         {/* ---------- A mai három ---------- */}
@@ -157,7 +242,7 @@ export default function Home() {
         </section>
 
         {/* ---------- Hogyan működik ---------- */}
-        <section id="hogyan" className="scroll-mt-20 bg-cream-200/50 py-20 lg:py-24">
+        <section id="hogyan" className="scroll-mt-20 bg-cream-200/60 py-20 lg:py-24">
           <div className="mx-auto w-full max-w-6xl px-5">
             <SectionHead
               eyebrow="Három lépés"
@@ -167,14 +252,11 @@ export default function Home() {
 
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
               {steps.map((s) => (
-                <li
-                  key={s.n}
-                  className="card-glow rounded-3xl bg-white p-7 ring-1 ring-cream-300"
-                >
-                  <span className="grid size-11 place-items-center rounded-full bg-night-900 font-display text-lg font-semibold text-gold-soft">
+                <li key={s.n} className="card-glow rounded-3xl bg-white p-7 ring-1 ring-cream-300">
+                  <span className="grid size-11 place-items-center rounded-full bg-night-900 font-display text-lg font-bold text-gold-soft">
                     {s.n}
                   </span>
-                  <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
+                  <h3 className="mt-5 font-display text-xl font-bold">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.body}</p>
                 </li>
               ))}
@@ -207,14 +289,11 @@ export default function Home() {
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {benefits.map((b) => (
-                <div
-                  key={b.title}
-                  className="rounded-3xl bg-white/[0.07] p-6 ring-1 ring-white/10"
-                >
+                <div key={b.title} className="rounded-3xl bg-white/[0.07] p-6 ring-1 ring-white/10">
                   <span aria-hidden className="text-2xl">
                     {b.emoji}
                   </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold">{b.title}</h3>
+                  <h3 className="mt-4 font-display text-lg font-bold">{b.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-cream/70">{b.body}</p>
                 </div>
               ))}
@@ -234,21 +313,21 @@ export default function Home() {
             <div className="card-glow mt-12 overflow-hidden rounded-[2rem] bg-night-900 text-cream">
               <div className="grid gap-px bg-white/10 sm:grid-cols-2">
                 <div className="bg-night-900 p-8">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-soft">
+                  <p className="text-xs font-bold uppercase tracking-widest text-gold-soft">
                     Először
                   </p>
-                  <p className="mt-3 font-display text-4xl font-semibold">10 nap ingyen</p>
+                  <p className="mt-3 font-display text-4xl font-bold">10 nap ingyen</p>
                   <p className="mt-3 text-sm leading-relaxed text-cream/70">
-                    30 mese, teljes hozzáféréssel. Bankkártya nem kell hozzá, és a végén
-                    sem vonunk le semmit magától.
+                    30 mese, teljes hozzáféréssel. Bankkártya nem kell hozzá, és a végén sem
+                    vonunk le semmit magától.
                   </p>
                 </div>
 
                 <div className="bg-night-800 p-8">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-soft">
+                  <p className="text-xs font-bold uppercase tracking-widest text-gold-soft">
                     Utána
                   </p>
-                  <p className="mt-3 font-display text-4xl font-semibold">
+                  <p className="mt-3 font-display text-4xl font-bold">
                     5 000 Ft
                     <span className="ml-1 text-base font-normal text-cream/60">/ hó</span>
                   </p>
@@ -272,7 +351,7 @@ export default function Home() {
         </section>
 
         {/* ---------- GYIK ---------- */}
-        <section id="gyik" className="scroll-mt-20 bg-cream-200/50 py-20 lg:py-24">
+        <section id="gyik" className="scroll-mt-20 bg-cream-200/60 py-20 lg:py-24">
           <div className="mx-auto w-full max-w-3xl px-5">
             <SectionHead eyebrow="Kérdések" title="Amit a szülők kérdezni szoktak" />
 
@@ -282,7 +361,7 @@ export default function Home() {
                   key={item.q}
                   className="group rounded-2xl bg-white px-6 py-5 ring-1 ring-cream-300 open:ring-night-600/25"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-bold">
                     {item.q}
                     <svg
                       viewBox="0 0 24 24"
@@ -304,12 +383,12 @@ export default function Home() {
         {/* ---------- Záró CTA ---------- */}
         <section id="regisztracio" className="starfield scroll-mt-20 py-20 text-cream lg:py-24">
           <div className="mx-auto w-full max-w-2xl px-5 text-center">
-            <h2 className="font-display text-3xl font-semibold leading-tight sm:text-4xl">
+            <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
               Ma este már választhat.
             </h2>
             <p className="mt-4 text-lg text-cream/75">
-              Add meg az e-mail címed, és holnap délután megérkezik az első három mese.
-              Tíz napig ingyen, kötelezettség nélkül.
+              Add meg az e-mail címed, és holnap délután megérkezik az első három mese. Tíz
+              napig ingyen, kötelezettség nélkül.
             </p>
             <div className="mt-9 text-left">
               <SignupForm variant="dark" />
@@ -337,13 +416,13 @@ function SectionHead({
   return (
     <div className="mx-auto max-w-2xl text-center">
       <p
-        className={`text-xs font-semibold uppercase tracking-widest ${
+        className={`text-xs font-bold uppercase tracking-widest ${
           dark ? "text-gold-soft" : "text-gold"
         }`}
       >
         {eyebrow}
       </p>
-      <h2 className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
+      <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">
         {title}
       </h2>
       {lead && (
@@ -372,16 +451,16 @@ function PreviewRow({
 }) {
   return (
     <div
-      className={`flex items-center gap-3 rounded-2xl px-3.5 py-3 ${
-        active ? "bg-gold/20 ring-2 ring-gold" : "bg-cream-200/70"
+      className={`flex items-center gap-2.5 rounded-xl px-3 py-2 ${
+        active ? "bg-gold/25 ring-2 ring-gold" : "bg-cream-200/80"
       }`}
     >
-      <span aria-hidden className="text-xl">
+      <span aria-hidden className="text-lg">
         {emoji}
       </span>
       <span className="min-w-0">
-        <span className="block truncate text-sm font-semibold">{title}</span>
-        <span className="block text-xs text-ink-soft">{meta}</span>
+        <span className="block truncate text-xs font-bold">{title}</span>
+        <span className="block text-[11px] text-ink-soft">{meta}</span>
       </span>
     </div>
   );
@@ -391,7 +470,7 @@ function Check({ className = "" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className={`size-4 text-gold ${className}`}
+      className={`size-4 text-gold-soft ${className}`}
       fill="none"
       stroke="currentColor"
       strokeWidth="2.5"
