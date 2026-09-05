@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState } from "react";
 import { usePreferences } from "./usePreferences";
 
@@ -99,7 +101,16 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
       </div>
 
       <p className={`mt-3 text-xs ${dark ? "text-cream/55" : "text-ink-soft"}`}>
-        Bankkártyát nem kérünk. A tizedik nap előtt írunk, hogy dönthess.
+        Bankkártyát nem kérünk. A tizedik nap előtt írunk, hogy dönthess. A
+        feliratkozással elfogadod az{" "}
+        <Link className="underline underline-offset-2" href="/aszf">
+          ÁSZF-et
+        </Link>{" "}
+        és az{" "}
+        <Link className="underline underline-offset-2" href="/adatkezelesi-tajekoztato">
+          adatkezelési tájékoztatót
+        </Link>
+        .
       </p>
 
       {status === "unavailable" && (

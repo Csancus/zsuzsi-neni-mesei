@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { site } from "@/lib/content";
 import { Logo } from "./Logo";
 
@@ -29,6 +31,10 @@ export function Footer() {
           <a className="transition hover:text-cream" href="#kategoriak">Kategóriák</a>
           <a className="transition hover:text-cream" href="#arak">Árak</a>
           <a className="transition hover:text-cream" href="#gyik">GYIK</a>
+          <Link className="transition hover:text-cream" href="/aszf">ÁSZF</Link>
+          <Link className="transition hover:text-cream" href="/adatkezelesi-tajekoztato">
+            Adatkezelés
+          </Link>
           <a className="transition hover:text-cream" href={`mailto:${site.email}`}>
             Kapcsolat
           </a>
