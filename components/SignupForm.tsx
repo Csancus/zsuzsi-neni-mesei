@@ -55,10 +55,9 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
             : "bg-night-900/5 text-ink ring-1 ring-night-900/10"
         }`}
       >
-        <p className="font-semibold">Megvagytok, köszönöm! 🌙</p>
+        <p className="font-semibold">Köszönöm szépen! 🌙</p>
         <p className={dark ? "mt-1 text-cream/75" : "mt-1 text-ink-soft"}>
-          Küldtem egy e-mailt, kattints rá a megerősítéshez. Holnap délután pedig már
-          nálatok az első három mese.
+          Megkaptam a jelentkezésedet, hamarosan írok.
         </p>
       </div>
     );
