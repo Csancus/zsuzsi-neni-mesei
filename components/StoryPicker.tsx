@@ -72,8 +72,8 @@ export function StoryPicker() {
       </div>
 
       <p className="mt-6 text-center text-sm text-ink-soft">
-        Kattintsatok bármelyikre, és elolvashatjátok az egész mesét. Esténként nálatok
-        ezt a gyermeked választja ki.
+        Kattintsatok bármelyikre, és elolvashatjátok az egészet. Esténként ezt a
+        döntést a gyermeked hozza meg.
       </p>
 
       {openIndex !== null && (

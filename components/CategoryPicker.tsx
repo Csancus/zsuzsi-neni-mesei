@@ -43,8 +43,8 @@ export function CategoryPicker() {
 
       <p aria-live="polite" className="mt-6 text-center text-sm text-ink-soft">
         {selected.length === 0
-          ? "Válasszatok párat, ebből állítom össze a napi hármast."
-          : `${selected.length} kategóriát jelöltetek be. Megjegyeztem, a regisztrációnál már ezekkel indultok.`}
+          ? "Válasszatok párat, ezekből állítom össze a napi hármast."
+          : `Megjegyeztem: ${selected.length} téma. A regisztrációnál már ezekkel indultok.`}
       </p>
     </div>
   );

@@ -155,7 +155,7 @@ export function StoryModal({
         <footer className="shrink-0 border-t border-cream-300/70 bg-cream-200/70 px-5 py-3.5 sm:px-9 sm:py-4">
           <div className="flex items-center justify-between gap-4">
             <p className="hidden text-xs leading-snug text-ink-soft sm:block">
-              Minden este három ilyen közül választhattok.
+              Minden este három ilyen mese közül választhattok.
             </p>
             <div className="flex shrink-0 items-center gap-2">
               <button

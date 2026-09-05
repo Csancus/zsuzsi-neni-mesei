@@ -73,7 +73,7 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: "Miért pont három mese?",
-    a: "Mert az esti mese nem csak rólad szól. Ha a gyermeked is beleszólhat, sokkal könnyebben megy a lefekvés. Három választás elég ahhoz, hogy legyen tétje, de nem annyi, hogy elvesszen benne.",
+    a: "Mert az esti mese nem csak rólad szól. Ha a gyermeked is beleszólhat, sokkal könnyebben megy a lefekvés. Három választás épp elég ahhoz, hogy legyen tétje, de nem annyi, hogy elvesszen benne.",
   },
   {
     q: "Milyen korosztálynak szólnak a mesék?",
@@ -85,7 +85,7 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: "Mennyibe kerül?",
-    a: "Az első tíz nap ingyen van. Utána havi 5 000 Ft. Nincs hűségidő, és a lemondáshoz nem kell se telefonálnotok, se levelezni.",
+    a: "Az első tíz nap ingyen van. Utána havi 5 000 Ft. Nincs hűségidő, és a lemondáshoz nem kell se telefonálnotok, se levelet írnotok – egy kattintás.",
   },
   {
     q: "Mi történik a próbaidőszak végén?",

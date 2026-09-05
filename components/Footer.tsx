@@ -10,7 +10,7 @@ export function Footer() {
           <Logo className="text-cream" />
           <p className="mt-4 text-sm leading-relaxed">
             Naponta három esti mesét küldök nektek e-mailben. A gyermeked választ egyet,
-            te felolvasod. Este fél nyolckor nem kell kitalálnotok semmit.
+            te felolvasod. Fél nyolckor nem kell kitalálnod, mi legyen a mese.
           </p>
           <TrackedLink
             href={site.facebook}

@@ -11,18 +11,18 @@ import { site } from "@/lib/content";
 const steps = [
   {
     n: "1",
-    title: "Beállítjátok, mit szerettek",
-    body: "Bejelölitek a kategóriákat és a gyermeked korát. Nem tart tovább két percnél, és később bármikor átírhatjátok.",
+    title: "Megmondjátok, mit szerettek",
+    body: "Bejelölitek a kedvenc témákat, és megadjátok, hány éves a gyermeked. Két perc az egész, és bármikor meggondolhatjátok magatokat.",
   },
   {
     n: "2",
-    title: "Délután megérkezik a hármas",
-    body: "Kora délután küldöm az e-mailt: három mese, mindegyiknél ott a cím, a hangulat és hogy hány perc felolvasni. Vacsora közben már tudjátok, mi lesz.",
+    title: "Délután megérkezik a három mese",
+    body: "Kora délután megírom nektek, mi a mai három. Mindegyiknél ott a címe, hogy miről szól, és hogy hány perc felolvasni – így már vacsora közben tudjátok, mi vár rátok.",
   },
   {
     n: "3",
     title: "A gyermeked választ, te felolvasod",
-    body: "Megmutatod neki a hármat, ő választ. Egy kattintás, és ott a teljes mese: nagy betűk, reklám nélkül, telefonra szabva.",
+    body: "Megmutatod neki mind a hármat, és ő dönt. Egy koppintás, és ott a teljes mese: nagy betűkkel, reklám nélkül, hogy csak egymásra kelljen figyelnetek.",
   },
 ];
 
@@ -36,17 +36,17 @@ const promises = [
   {
     icon: "⭐",
     title: "Minden nap 3 mese, ti választotok",
-    body: "Nem egy kötelező adagot küldök, hanem három lehetőséget. A döntés nálatok marad.",
+    body: "Nem egyetlen kötelező mesét küldök, hanem hármat, amiből választhattok. Így az esti mese nem feladat lesz, hanem közös döntés.",
   },
   {
     icon: "🌱",
     title: "Nyugodtabb esték",
-    body: "Fél nyolckor már nem azon gondolkodtok, mit meséljetek. Ott a három, csak választanotok kell.",
+    body: "Fél nyolckor már nem kell törnötök a fejeteket, mi legyen a mese. Ott vár a három, és csak annyi a dolgotok, hogy leüljetek egymás mellé.",
   },
   {
     icon: "🌈",
     title: "Boldogabb gyerekek",
-    body: "Sokat jelent a gyermekednek, hogy a nap végén ő dönthet valamiről. Sokszor ettől lesz könnyebb a lefekvés is.",
+    body: "Sokat jelent neki, hogy a nap végén az övé a döntés. Sokszor épp ettől megy könnyebben a lefekvés.",
   },
 ];
 
@@ -54,41 +54,41 @@ const benefits = [
   {
     emoji: "⏱️",
     title: "Tudod, mennyi idő",
-    body: "Minden mesénél odaírom, hány perc. Ha ma tényleg csak öt perc van, öt percest választotok.",
+    body: "Minden mesénél odaírom, hány perc felolvasni. Ha ma tényleg csak öt percetek van, nyugodtan válasszatok öt percest – az is egész mese.",
   },
   {
     emoji: "📵",
     title: "Képernyő helyett hang",
-    body: "A telefon nálad marad, a gyermeked csak téged hall. Nincs villogás, és nem indul el magától a következő rész.",
+    body: "A telefon a te kezedben marad, a gyermeked pedig csak a te hangodat hallja. Nincs villogás, és nem indul el magától a következő rész.",
   },
   {
     emoji: "🌙",
     title: "Elalvásra hangolva",
-    body: "Nem hagyom nyitva a mesék végét. Úgy zárom le őket, hogy utána le lehessen kapcsolni a villanyt.",
+    body: "Egyik mesémnek sincs izgalomban hagyó vége. Úgy írom meg őket, hogy az utolsó mondat után jólessen lekapcsolni a villanyt.",
   },
   {
     emoji: "🎒",
     title: "Veletek együtt változik",
-    body: "Ahogy nő a gyermeked, más témák érdeklik. Elég átállítanotok a kategóriákat, és a válogatás követi.",
+    body: "Ahogy nő a gyermeked, más témák kezdik érdekelni. Ilyenkor elég átjelölnötök a kategóriákat, és a válogatás követi őt.",
   },
   {
     emoji: "✍️",
     title: "Eredeti mesék",
-    body: "Minden mesét én írok, magyarul. Nincs köztük netről összeszedett vagy gépből fordított szöveg.",
+    body: "Minden mesét én írok, magyarul, egyesével. Nincs köztük netről összeszedett vagy géppel fordított szöveg.",
   },
   {
     emoji: "💌",
     title: "Nem app, csak egy e-mail",
-    body: "Nem kell letöltenetek semmit, és nem kell esténként bejelentkezni. Megjön, megnyitod, olvasod.",
+    body: "Nem kell letöltenetek semmit, és esténként sem kell bejelentkezni sehova. Megérkezik, megnyitod, olvasod.",
   },
 ];
 
 const included = [
   "Naponta 3 friss, eredeti mese",
-  "Kategóriák tetszés szerint",
+  "A témákat ti választjátok",
   "Felolvasási idő minden mesénél",
-  "Korosztály-jelölés (3–8 év)",
-  "Reklámmentes olvasófelület",
+  "Ajánlott életkor minden mesénél",
+  "Reklám nélküli olvasófelület",
   "Bármikor lemondható",
 ];
 
@@ -106,10 +106,12 @@ export default function Home() {
                 <span aria-hidden>✨</span> 10 nap ingyen, bankkártya nélkül
               </span>
 
-              <h1 className="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 font-display text-[2.1rem] font-bold leading-[1.12] tracking-tight sm:text-[2.75rem] lg:text-[3.2rem]">
                 Minden este három mese.
                 <br />
-                <span className="text-gold-soft">A gyermeked választ egyet.</span>
+                <span className="text-gold-soft">A gyermeked választ.</span>
+                <br />
+                <span className="text-gold-soft">Boldog és nyugodt este.</span>
               </h1>
 
               <p className="mt-5 font-hand text-2xl text-cream/85 sm:text-[1.7rem]">
@@ -235,7 +237,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Egy példa"
               title="Ez érkezett ma"
-              lead="Ez a mai hármas. Nyissátok meg bármelyiket, és elolvashatjátok a teljes mesét – pont úgy, ahogy előfizetőként is látnátok."
+              lead="Ez a mai hármas. Nyissátok meg bármelyiket, és el is olvashatjátok az egészet – pontosan így érkezik majd hozzátok minden délután."
             />
             <div className="mt-12">
               <StoryPicker />
@@ -249,7 +251,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Három lépés"
               title="Hogyan működik"
-              lead="Egyszer beállítjátok, onnantól már csak felolvasol."
+              lead="Egyszer beállítjátok, onnantól már csak a felolvasás marad."
             />
 
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
@@ -272,7 +274,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Ti szabjátok testre"
               title="Milyen meséket szeretnétek?"
-              lead="Jelöljétek be, ami érdekel titeket. A holnapi hármast már ehhez igazítom, és később is átírhatjátok."
+              lead="Jelöljétek be, ami érdekel titeket. A holnapi hármast már ehhez igazítom – és ha közben mást szeretnétek, bármikor átírhatjátok."
             />
             <div className="mt-12">
               <CategoryPicker />
@@ -320,8 +322,8 @@ export default function Home() {
                   </p>
                   <p className="mt-3 font-display text-4xl font-bold">10 nap ingyen</p>
                   <p className="mt-3 text-sm leading-relaxed text-cream/70">
-                    Harminc mese, minden funkcióval. Bankkártyát nem kérek hozzá, szóval a
-                    végén sem indul el semmi magától.
+                    Harminc mese, mindennel együtt. Bankkártyát nem kérek hozzá, így a
+                    tizedik nap után magától nem indul el semmi.
                   </p>
                 </div>
 
@@ -334,8 +336,8 @@ export default function Home() {
                     <span className="ml-1 text-base font-normal text-cream/60">/ hó</span>
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-cream/70">
-                    Nagyjából egy mesekönyv ára, havi kilencven meséért. Ha nem jó, egy
-                    kattintás a lemondás.
+                    Nagyjából egy mesekönyv ára – havonta kilencven meséért. Ha mégsem
+                    nektek való, egy kattintás a lemondás.
                   </p>
                 </div>
               </div>
@@ -367,11 +369,11 @@ export default function Home() {
         <section id="regisztracio" className="starfield scroll-mt-20 py-20 text-cream lg:py-24">
           <div className="mx-auto w-full max-w-2xl px-5 text-center">
             <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
-              Ma este már ő választhat.
+              Holnap este már ő választhat.
             </h2>
             <p className="mt-4 text-lg text-cream/75">
-              Írd be az e-mail címed, és holnap délután küldöm az első három mesét. Tíz
-              napig ingyen, és bankkártyát nem kérek.
+              Írd be az e-mail címed, és holnap délután már küldöm is az első három
+              mesét. Tíz napig ingyen, bankkártya nélkül.
             </p>
             <div className="mt-9 text-left">
               <SignupForm variant="dark" />
