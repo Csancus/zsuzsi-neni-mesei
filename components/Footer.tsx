@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import { site } from "@/lib/content";
 import { Logo } from "./Logo";
+import { TrackedLink } from "./TrackedLink";
 
 export function Footer() {
   return (
@@ -13,17 +12,18 @@ export function Footer() {
             Naponta három esti mese e-mailben. A gyerek választ egyet, te felolvasod.
             Este fél nyolckor nem kell kitalálnod semmit.
           </p>
-          <a
+          <TrackedLink
             href={site.facebook}
-            target="_blank"
-            rel="noreferrer"
+            external
+            event="facebook_klikk"
+            label="lábléc gomb"
             className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-cream transition hover:bg-white/15"
           >
             <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden>
               <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z" />
             </svg>
             Kövess minket a Facebookon
-          </a>
+          </TrackedLink>
         </div>
 
         <nav className="grid grid-cols-2 gap-x-12 gap-y-2 text-sm">
@@ -31,21 +31,37 @@ export function Footer() {
           <a className="transition hover:text-cream" href="#kategoriak">Kategóriák</a>
           <a className="transition hover:text-cream" href="#arak">Árak</a>
           <a className="transition hover:text-cream" href="#gyik">GYIK</a>
-          <Link className="transition hover:text-cream" href="/aszf">ÁSZF</Link>
-          <Link className="transition hover:text-cream" href="/adatkezelesi-tajekoztato">
+          <TrackedLink className="transition hover:text-cream" href="/aszf" event="jogi_megnyitas" label="ÁSZF (lábléc)">
+            ÁSZF
+          </TrackedLink>
+          <TrackedLink
+            className="transition hover:text-cream"
+            href="/adatkezelesi-tajekoztato"
+            event="jogi_megnyitas"
+            label="Adatkezelési (lábléc)"
+          >
             Adatkezelés
-          </Link>
+          </TrackedLink>
+          <TrackedLink
+            className="transition hover:text-cream"
+            href="/cookie-szabalyzat"
+            event="jogi_megnyitas"
+            label="Cookie (lábléc)"
+          >
+            Cookie
+          </TrackedLink>
           <a className="transition hover:text-cream" href={`mailto:${site.email}`}>
             Kapcsolat
           </a>
-          <a
+          <TrackedLink
             className="transition hover:text-cream"
             href={site.facebook}
-            target="_blank"
-            rel="noreferrer"
+            external
+            event="facebook_klikk"
+            label="lábléc menü"
           >
             Facebook
-          </a>
+          </TrackedLink>
         </nav>
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { categories } from "@/lib/content";
+import { track } from "@/lib/track";
 import { usePreferences } from "./usePreferences";
 
 export function CategoryPicker() {
@@ -15,7 +16,10 @@ export function CategoryPicker() {
             <li key={cat.id}>
               <button
                 type="button"
-                onClick={() => toggle(cat.id)}
+                onClick={() => {
+                  if (!active) track("kategoria_be", cat.name);
+                  toggle(cat.id);
+                }}
                 aria-pressed={active}
                 title={cat.blurb}
                 className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium transition ${

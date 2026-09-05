@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/lib/content";
+import { track } from "@/lib/track";
 import { Logo } from "./Logo";
 
 const links = [
@@ -27,6 +28,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
+              onClick={() => track("nav_klikk", l.label)}
               className="text-sm text-cream/75 transition hover:text-cream"
             >
               {l.label}
@@ -40,6 +42,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook oldal"
+            onClick={() => track("facebook_klikk", "fejléc")}
             className="hidden size-10 place-items-center rounded-full text-cream/70 ring-1 ring-white/15 transition hover:text-cream sm:grid"
           >
             <svg viewBox="0 0 24 24" className="size-4.5" fill="currentColor" aria-hidden>
@@ -48,6 +51,7 @@ export function Header() {
           </a>
           <a
             href="#regisztracio"
+            onClick={() => track("header_cta", "fejléc")}
             className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-night-900 transition hover:bg-gold-soft sm:inline-block"
           >
             10 nap ingyen
@@ -77,7 +81,10 @@ export function Header() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    track("nav_klikk", l.label);
+                    setOpen(false);
+                  }}
                   className="block rounded-xl px-3 py-2.5 text-sm text-cream/80 transition hover:bg-white/5 hover:text-cream"
                 >
                   {l.label}
@@ -87,7 +94,10 @@ export function Header() {
             <li className="pt-2 sm:hidden">
               <a
                 href="#regisztracio"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  track("header_cta", "mobil menü");
+                  setOpen(false);
+                }}
                 className="block rounded-full bg-gold px-5 py-3 text-center text-sm font-semibold text-night-900"
               >
                 10 nap ingyen

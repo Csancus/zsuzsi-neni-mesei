@@ -1,11 +1,12 @@
 import Image from "next/image";
 
 import { CategoryPicker } from "@/components/CategoryPicker";
+import { FaqList } from "@/components/FaqList";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SignupForm } from "@/components/SignupForm";
 import { StoryPicker } from "@/components/StoryPicker";
-import { faq, site } from "@/lib/content";
+import { site } from "@/lib/content";
 
 const steps = [
   {
@@ -355,27 +356,8 @@ export default function Home() {
           <div className="mx-auto w-full max-w-3xl px-5">
             <SectionHead eyebrow="Kérdések" title="Amit a szülők kérdezni szoktak" />
 
-            <div className="mt-12 space-y-3">
-              {faq.map((item) => (
-                <details
-                  key={item.q}
-                  className="group rounded-2xl bg-white px-6 py-5 ring-1 ring-cream-300 open:ring-night-600/25"
-                >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-bold">
-                    {item.q}
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="size-5 shrink-0 text-ink-soft transition group-open:rotate-45"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M12 5v14M5 12h14" strokeLinecap="round" />
-                    </svg>
-                  </summary>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.a}</p>
-                </details>
-              ))}
+            <div className="mt-12">
+              <FaqList />
             </div>
           </div>
         </section>

@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { TrackedLink } from "./TrackedLink";
 
 import { useState } from "react";
+import { track } from "@/lib/track";
 import { usePreferences } from "./usePreferences";
 
 type Status = "idle" | "loading" | "ok" | "unavailable" | "error";
@@ -18,6 +19,7 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
     e.preventDefault();
     if (status === "loading") return;
     setStatus("loading");
+    track("feliratkozas_kuldes", variant === "dark" ? "sötét űrlap" : "világos űrlap");
 
     const form = new FormData(e.currentTarget);
     try {
@@ -31,6 +33,7 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
         }),
       });
       if (res.ok) {
+        track("feliratkozas_siker");
         setStatus("ok");
         setEmail("");
       } else if (res.status === 503) {
@@ -103,13 +106,23 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
       <p className={`mt-3 text-xs ${dark ? "text-cream/55" : "text-ink-soft"}`}>
         Bankkártyát nem kérünk. A tizedik nap előtt írunk, hogy dönthess. A
         feliratkozással elfogadod az{" "}
-        <Link className="underline underline-offset-2" href="/aszf">
+        <TrackedLink
+          className="underline underline-offset-2"
+          href="/aszf"
+          event="jogi_megnyitas"
+          label="ÁSZF (űrlap alól)"
+        >
           ÁSZF-et
-        </Link>{" "}
+        </TrackedLink>{" "}
         és az{" "}
-        <Link className="underline underline-offset-2" href="/adatkezelesi-tajekoztato">
+        <TrackedLink
+          className="underline underline-offset-2"
+          href="/adatkezelesi-tajekoztato"
+          event="jogi_megnyitas"
+          label="Adatkezelési (űrlap alól)"
+        >
           adatkezelési tájékoztatót
-        </Link>
+        </TrackedLink>
         .
       </p>
 

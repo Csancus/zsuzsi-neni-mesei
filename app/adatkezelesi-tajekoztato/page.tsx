@@ -166,18 +166,23 @@ export default function AdatkezelesiTajekoztato() {
         régióban tárolódnak.
       </p>
 
-      <h2>6. Sütik és a böngésződben tárolt adatok</h2>
+      <h2>6. Sütik, mérés, a böngésződben tárolt adatok</h2>
       <p>
         A weboldalon <strong>nincs analitikai és nincs marketing süti</strong>, és nem
-        futtatunk semmilyen külső nyomkövető szkriptet. Ezért nem kérünk süti-hozzájárulást
-        sem: nincs mihez.
+        futtatunk külső nyomkövető szkriptet. Ezért nem kérünk süti-hozzájárulást sem:
+        nincs mihez.
       </p>
       <p>
         Egyetlen dolgot tárolunk a böngésződben, a <code>localStorage</code>-ban: a
         főoldalon bejelölt mesekategóriákat, hogy ne vesszenek el, amíg végignézed az
-        oldalt. Ez nálad marad, hozzánk nem kerül át, és a böngésződ adatainak törlésével
-        vagy privát ablakban bármikor megszűnik. Ha előfizetsz, ugyanezek a beállítások a
-        fiókodhoz is elmentődnek.
+        oldalt. Ez nálad marad, hozzánk nem kerül át.
+      </p>
+      <p>
+        Néhány gomb megnyomását <strong>összesítve megszámoljuk</strong> (például hány
+        mesét nyitottak meg ma), de ehhez nem tárolunk IP-címet, böngészőazonosítót, sütit
+        vagy bármi mást, amiből visszakövetkeztethetnénk rád. Ez nem személyes adat, ezért
+        nem is szerepel a fenti táblázatban. A részletek a{" "}
+        <Link href="/cookie-szabalyzat">Süti (cookie) szabályzatban</Link> vannak.
       </p>
       <p>
         Amikor bejelentkezel, a működéshez feltétlenül szükséges munkamenet-sütit
@@ -263,7 +268,9 @@ export default function AdatkezelesiTajekoztato() {
       <h2>11. Kapcsolódó dokumentumok</h2>
       <p>
         A szolgáltatás használatának feltételeit az{" "}
-        <Link href="/aszf">Általános Szerződési Feltételek</Link> tartalmazzák. Kérdés esetén írj
+        <Link href="/aszf">Általános Szerződési Feltételek</Link> tartalmazzák, a
+        böngésződben tárolt adatokról és a mérésről pedig a{" "}
+        <Link href="/cookie-szabalyzat">Süti (cookie) szabályzat</Link> szól. Kérdés esetén írj
         a <a href={`mailto:${provider.email}`}>{provider.email}</a> címre, vagy keress a{" "}
         <a href={site.facebook} target="_blank" rel="noreferrer">
           Facebook-oldalunkon

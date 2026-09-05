@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { demoStories } from "@/lib/content";
+import { track } from "@/lib/track";
 import { StoryModal } from "./StoryModal";
 
 export function StoryPicker() {
@@ -10,6 +11,7 @@ export function StoryPicker() {
   const [readIndexes, setReadIndexes] = useState<number[]>([]);
 
   function open(i: number) {
+    track("mese_megnyitas", demoStories[i].title);
     setOpenIndex(i);
     setReadIndexes((prev) => (prev.includes(i) ? prev : [...prev, i]));
   }
