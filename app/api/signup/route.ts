@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+import { web3formsKey } from "@/lib/forms";
+
 // Web3Forms – ugyanaz az ingyenes megoldás, ami a lelkekgyogyasza.hu és a
 // budapest-dietetikus.hu oldalakon is fut. (A FormSubmit 2026-07-15-én leállt.)
 // Itt szerver oldalról hívjuk, így a hozzáférési kulcs nem kerül bele a kliens bundle-be.
@@ -35,10 +37,10 @@ export async function POST(request: Request) {
     ? body.categories.filter((c): c is string => typeof c === "string").slice(0, 20)
     : [];
 
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  const accessKey = web3formsKey();
   if (!accessKey) {
     console.warn(
-      "[signup] Nincs WEB3FORMS_ACCESS_KEY – a jelentkezés nem lett elküldve:",
+      "[signup] Nincs Web3Forms kulcs (lib/forms.ts vagy WEB3FORMS_ACCESS_KEY) – a jelentkezés nem lett elküldve:",
       email,
     );
     return NextResponse.json({ ok: false, reason: "not_configured" }, { status: 503 });

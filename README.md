@@ -53,7 +53,7 @@ Másold a `.env.example` fájlt `.env.local` néven, és töltsd ki:
 | --- | --- |
 | `SZAMOK_PW` | Jelszó a `/szamok` oldalhoz |
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob írási token a kattintásszámlálóhoz. A Vercel Storage fülön létrehozott Blob store csatolásakor magától bekerül; lokálisan `vercel env pull` hozza le. |
-| `WEB3FORMS_ACCESS_KEY` | Web3Forms hozzáférési kulcs. A web3forms.com oldalon kérhető ki arra az e-mail címre, ahova az értesítéseket várod (`csanad.peter.czarth@gmail.com`); a kulcs azonnal megjön levélben. Ugyanez a megoldás fut a lelkekgyogyasza.hu és a budapest-dietetikus.hu oldalon is. |
+| `WEB3FORMS_ACCESS_KEY` | Web3Forms hozzáférési kulcs. **Alternatíva:** beírhatod a `lib/forms.ts` `HARDCODED_KEY` mezőjébe, mint a lelkekgyogyasza.hu és a budapest-dietetikus.hu oldalon – a Web3Forms kulcsa nem titok, azokon az oldalakon is látszik a HTML-ben. A kulcs a web3forms.com oldalon kérhető ki arra a címre, ahova az értesítéseket várod (`csanad.peter.czarth@gmail.com`). |
 
 **Amíg ez nincs beállítva, a feliratkozás nem megy sehova**: az API 503-at ad,
 az űrlap pedig kiírja, hogy a regisztráció még nem élesedett, és mutat egy e-mail címet.
