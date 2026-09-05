@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/lib/content";
 import { track } from "@/lib/track";
@@ -15,13 +17,27 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  /** A logóról mindig a főoldal tetejére jutunk – ha már ott vagyunk, felgörgetünk. */
+  function onLogoClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    setOpen(false);
+    if (pathname !== "/") return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-night-900/85 text-cream backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="shrink-0" onClick={() => setOpen(false)}>
+        <Link
+          href="/"
+          aria-label="Zsuzsi néni meséi – főoldal"
+          className="shrink-0"
+          onClick={onLogoClick}
+        >
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
