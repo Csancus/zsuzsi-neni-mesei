@@ -69,27 +69,27 @@ export const demoStories: DemoStory[] = [
 export const faq: { q: string; a: string }[] = [
   {
     q: "Hogyan érkeznek meg a mesék?",
-    a: "Kora délután kapsz egy e-mailt, benne a három mesével: cím, pár mondat róla, és hogy hány perc felolvasni. Rákattintasz arra, amelyiket választottátok, és megnyílik a teljes szöveg. Telefonon is jól olvasható, nem kell nagyítani.",
+    a: "Kora délután küldök nektek egy e-mailt, benne a három mesével: cím, pár mondat róla, és hogy hány perc felolvasni. Rákattintotok arra, amelyiket választottátok, és megnyílik a teljes szöveg. Telefonon is jól olvasható, nem kell nagyítani.",
   },
   {
     q: "Miért pont három mese?",
-    a: "Mert az esti mese nem csak rólad szól. Ha a gyerek is beleszólhat, sokkal könnyebben megy a lefekvés. Három választás elég ahhoz, hogy legyen tétje, de nem annyi, hogy elvesszen benne.",
+    a: "Mert az esti mese nem csak rólad szól. Ha a gyermeked is beleszólhat, sokkal könnyebben megy a lefekvés. Három választás elég ahhoz, hogy legyen tétje, de nem annyi, hogy elvesszen benne.",
   },
   {
     q: "Milyen korosztálynak szólnak a mesék?",
-    a: "Nagyjából hároméves kortól nyolcig. Minden mesénél ott az ajánlott kor és a felolvasási idő, így fél nyolckor sem érhet meglepetés.",
+    a: "Nagyjából hároméves kortól nyolcig. Minden mesénél odaírom az ajánlott kort és a felolvasási időt, így fél nyolckor sem érhet meglepetés titeket.",
   },
   {
     q: "Meg tudom adni, milyen meséket szeretnék?",
-    a: "Igen. Bejelölöd a kategóriákat: állatok, kalandok, természet, barátság, tanulságos mesék és a többi. A következő válogatás már ezekből jön, és később is bármikor átállíthatod.",
+    a: "Igen. Bejelölitek a kategóriákat: állatok, kalandok, természet, barátság, tanulságos mesék és a többi. A következő válogatást már ezekből állítom össze, és később is bármikor átállíthatjátok.",
   },
   {
     q: "Mennyibe kerül?",
-    a: "Az első tíz nap ingyen van. Utána havi 5 000 Ft. Nincs hűségidő, és a lemondáshoz nem kell se telefonálni, se levelezni.",
+    a: "Az első tíz nap ingyen van. Utána havi 5 000 Ft. Nincs hűségidő, és a lemondáshoz nem kell se telefonálnotok, se levelezni.",
   },
   {
     q: "Mi történik a próbaidőszak végén?",
-    a: "A tizedik nap előtt írunk. Ha nem folytatnád, egy kattintás, és ennyi. Bankkártyát eleve nem kértünk, szóval magától nem indul el semmi.",
+    a: "A tizedik nap előtt írok nektek. Ha nem folytatnátok, egy kattintás, és ennyi. Bankkártyát eleve nem kértem, szóval magától nem indul el semmi.",
   },
 ];
 

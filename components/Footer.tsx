@@ -9,8 +9,8 @@ export function Footer() {
         <div className="max-w-sm">
           <Logo className="text-cream" />
           <p className="mt-4 text-sm leading-relaxed">
-            Naponta három esti mese e-mailben. A gyermeked választ egyet, te felolvasod.
-            Este fél nyolckor nem kell kitalálnod semmit.
+            Naponta három esti mesét küldök nektek e-mailben. A gyermeked választ egyet,
+            te felolvasod. Este fél nyolckor nem kell kitalálnotok semmit.
           </p>
           <TrackedLink
             href={site.facebook}
@@ -22,7 +22,7 @@ export function Footer() {
             <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden>
               <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z" />
             </svg>
-            Kövess minket a Facebookon
+            Kövess a Facebookon
           </TrackedLink>
         </div>
 
@@ -68,7 +68,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-5 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Zsuzsi néni meséi</p>
-          <p>Minden mesét mi írunk.</p>
+          <p>Minden mesét én írok.</p>
         </div>
       </div>
     </footer>

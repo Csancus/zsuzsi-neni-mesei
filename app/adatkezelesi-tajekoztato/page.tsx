@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Adatkezelési tájékoztató",
   description:
-    "Milyen személyes adatokat kezelünk a Zsuzsi néni meséi szolgáltatásban, mennyi ideig, kinek adjuk tovább, és milyen jogaid vannak.",
+    "Milyen személyes adatokat kezelek a Zsuzsi néni meséi szolgáltatásban, mennyi ideig, kinek adom tovább, és milyen jogaid vannak.",
   robots: { index: true, follow: true },
 };
 
@@ -23,7 +23,7 @@ export default function AdatkezelesiTajekoztato() {
   return (
     <LegalShell
       title="Adatkezelési tájékoztató"
-      intro="Röviden: az e-mail címedet azért kezeljük, hogy meg tudjuk küldeni a napi meséket, a kiválasztott kategóriákat pedig azért, hogy a válogatás rólatok szóljon. Nem adjuk el senkinek, és bármikor kérheted a törlésüket."
+      intro="Röviden: az e-mail címedet azért kezelem, hogy meg tudom küldeni a napi meséket, a kiválasztott kategóriákat pedig azért, hogy a válogatás rólatok szóljon. Nem adom el senkinek, és bármikor kérheted a törlésüket."
       updatedAt={legalUpdatedAt}
     >
       <h2>1. Ki kezeli az adataidat?</h2>
@@ -50,11 +50,11 @@ export default function AdatkezelesiTajekoztato() {
         <li>Weboldal: {provider.website}</li>
       </ul>
       <p>
-        Adatvédelmi tisztviselőt nem alkalmazunk, mert a tevékenységünk ezt nem teszi
-        kötelezővé. Adatvédelmi kérdésekben a fenti e-mail címen tudsz elérni minket.
+        Adatvédelmi tisztviselőt nem alkalmazok, mert a tevékenységem ezt nem teszi
+        kötelezővé. Adatvédelmi kérdésekben a fenti e-mail címen tudsz elérni engem.
       </p>
 
-      <h2>2. Milyen adatokat kezelünk, és miért?</h2>
+      <h2>2. Milyen adatokat kezelek, és miért?</h2>
       <table>
         <thead>
           <tr>
@@ -79,7 +79,7 @@ export default function AdatkezelesiTajekoztato() {
           </tr>
           <tr>
             <td>Melyik mesét nyitottad meg</td>
-            <td>Hogy ne küldjünk kétszer ugyanolyat, és lássuk, mi működik</td>
+            <td>Hogy ne küldjek kétszer ugyanolyat, és lássam, mi működik</td>
             <td>Jogos érdek (GDPR 6. cikk (1) f) pont)</td>
             <td>Legfeljebb 12 hónap</td>
           </tr>
@@ -98,7 +98,7 @@ export default function AdatkezelesiTajekoztato() {
             <td>A fizetési szolgáltatónál, a saját szabályzata szerint</td>
           </tr>
           <tr>
-            <td>Nekünk írt e-mail tartalma</td>
+            <td>Nekem írt e-mail tartalma</td>
             <td>Válaszadás, panaszkezelés</td>
             <td>Jogos érdek, panasz esetén jogi kötelezettség</td>
             <td>Válasz után 1 év, panasz esetén 5 év</td>
@@ -106,24 +106,24 @@ export default function AdatkezelesiTajekoztato() {
         </tbody>
       </table>
       <p>
-        <strong>Bankkártyaadatot soha nem látunk és nem tárolunk.</strong> A fizetés a
-        fizetési szolgáltató felületén történik, mi csak azt kapjuk vissza, hogy a
+        <strong>Bankkártyaadatot soha nem látok és nem tárolok.</strong> A fizetés a
+        fizetési szolgáltató felületén történik, mi csak azt kapom vissza, hogy a
         tranzakció sikeres volt-e.
       </p>
 
       <h2>3. Mi történik a 10 napos próbaidőszakban?</h2>
       <p>
-        A próbaidőszak alatt csak az e-mail címedet és a bejelölt kategóriákat kezeljük.
-        Bankkártyát nem kérünk, számlázási adatot nem adsz meg. Ha a 10 nap után nem
-        fizetsz elő, az adataidat 30 napon belül töröljük.
+        A próbaidőszak alatt csak az e-mail címedet és a bejelölt kategóriákat kezelem.
+        Bankkártyát nem kérek, számlázási adatot nem adsz meg. Ha a 10 nap után nem
+        fizetsz elő, az adataidat 30 napon belül törlöm.
       </p>
 
-      <h2>4. Kinek adjuk tovább?</h2>
+      <h2>4. Kinek adom tovább?</h2>
       <p>
-        Az adataidat nem adjuk el, és nem adjuk át marketingcélra senkinek. Ahhoz viszont,
-        hogy a szolgáltatás működjön, néhány szolgáltatót igénybe veszünk. Ők
+        Az adataidat nem adom el, és nem adom át marketingcélra senkinek. Ahhoz viszont,
+        hogy a szolgáltatás működjön, néhány szolgáltatót igénybe veszek. Ők
         adatfeldolgozóként járnak el, azaz csak azt tehetik az adatokkal, amire mi
-        utasítjuk őket:
+        utasítom őket:
       </p>
       <ul>
         <li>
@@ -153,7 +153,7 @@ export default function AdatkezelesiTajekoztato() {
         </li>
       </ul>
       <p>
-        Ezen kívül adatot csak akkor adunk ki, ha erre jogszabály kötelez minket (például
+        Ezen kívül adatot csak akkor adok ki, ha erre jogszabály kötelez engem (például
         hatósági vagy bírósági megkeresés esetén).
       </p>
 
@@ -169,49 +169,49 @@ export default function AdatkezelesiTajekoztato() {
       <h2>6. Sütik, mérés, a böngésződben tárolt adatok</h2>
       <p>
         A weboldalon <strong>nincs analitikai és nincs marketing süti</strong>, és nem
-        futtatunk külső nyomkövető szkriptet. Ezért nem kérünk süti-hozzájárulást sem:
+        futtatok külső nyomkövető szkriptet. Ezért nem kérek süti-hozzájárulást sem:
         nincs mihez.
       </p>
       <p>
-        Egyetlen dolgot tárolunk a böngésződben, a <code>localStorage</code>-ban: a
+        Egyetlen dolgot tárolok a böngésződben, a <code>localStorage</code>-ban: a
         főoldalon bejelölt mesekategóriákat, hogy ne vesszenek el, amíg végignézed az
-        oldalt. Ez nálad marad, hozzánk nem kerül át.
+        oldalt. Ez nálad marad, hozzám nem kerül át.
       </p>
       <p>
-        Néhány gomb megnyomását <strong>összesítve megszámoljuk</strong> (például hány
-        mesét nyitottak meg ma), de ehhez nem tárolunk IP-címet, böngészőazonosítót, sütit
-        vagy bármi mást, amiből visszakövetkeztethetnénk rád. Ez nem személyes adat, ezért
+        Néhány gomb megnyomását <strong>összesítve megszámolom</strong> (például hány
+        mesét nyitottak meg ma), de ehhez nem tárolok IP-címet, böngészőazonosítót, sütit
+        vagy bármi mást, amiből visszakövetkeztethetnék rád. Ez nem személyes adat, ezért
         nem is szerepel a fenti táblázatban. A részletek a{" "}
         <Link href="/cookie-szabalyzat">Süti (cookie) szabályzatban</Link> vannak.
       </p>
       <p>
         Amikor bejelentkezel, a működéshez feltétlenül szükséges munkamenet-sütit
-        használunk. Ehhez a GDPR és az elektronikus hírközlési szabályok szerint nem kell
+        használok. Ehhez a GDPR és az elektronikus hírközlési szabályok szerint nem kell
         külön hozzájárulás.
       </p>
 
       <h2>7. Milyen jogaid vannak?</h2>
-      <p>Bármikor kérheted tőlünk, hogy</p>
+      <p>Bármikor kérheted tőlem, hogy</p>
       <ul>
         <li>
-          <strong>megmutassuk</strong>, milyen adataidat kezeljük (hozzáférés joga),
+          <strong>megmutassam</strong>, milyen adataidat kezelem (hozzáférés joga),
         </li>
         <li>
-          <strong>kijavítsuk</strong> a pontatlan adatot (helyesbítés),
+          <strong>kijavítsam</strong> a pontatlan adatot (helyesbítés),
         </li>
         <li>
-          <strong>töröljük</strong> az adataidat (törlés joga) – kivéve, amit jogszabály
-          alapján meg kell őriznünk, például a kiállított számlákat,
+          <strong>törlöm</strong> az adataidat (törlés joga) – kivéve, amit jogszabály
+          alapján meg kell őriznem, például a kiállított számlákat,
         </li>
         <li>
-          <strong>korlátozzuk</strong> az adatkezelést, amíg egy vitás kérdés eldől,
+          <strong>korlátozom</strong> az adatkezelést, amíg egy vitás kérdés eldől,
         </li>
         <li>
-          <strong>átadjuk</strong> az adataidat géppel olvasható formában neked vagy egy
+          <strong>átadom</strong> az adataidat géppel olvasható formában neked vagy egy
           másik szolgáltatónak (adathordozhatóság),
         </li>
         <li>
-          <strong>ne kezeljük</strong> tovább az adataidat, ha jogos érdeken alapuló
+          <strong>ne kezelem</strong> tovább az adataidat, ha jogos érdeken alapuló
           adatkezelés ellen tiltakozol.
         </li>
       </ul>
@@ -221,13 +221,13 @@ export default function AdatkezelesiTajekoztato() {
       </p>
       <p>
         Írj a <a href={`mailto:${provider.email}`}>{provider.email}</a> címre, és{" "}
-        <strong>legkésőbb 30 napon belül</strong> válaszolunk. Ha a kérés összetett,
-        ezt a határidőt legfeljebb két hónappal meghosszabbíthatjuk, de erről is szólunk.
+        <strong>legkésőbb 30 napon belül</strong> válaszolok. Ha a kérés összetett,
+        ezt a határidőt legfeljebb két hónappal meghosszabbíthatom, de erről is szólok.
       </p>
 
       <h2>8. Hova fordulhatsz, ha nem vagy elégedett?</h2>
       <p>
-        Először írj nekünk, jó eséllyel gyorsabban rendezzük. Ettől függetlenül bármikor
+        Először írj nekem, jó eséllyel gyorsabban rendezem. Ettől függetlenül bármikor
         panasszal élhetsz a felügyeleti hatóságnál:
       </p>
       <ul>
@@ -250,19 +250,19 @@ export default function AdatkezelesiTajekoztato() {
         megindíthatod.
       </p>
 
-      <h2>9. Hogyan vigyázunk az adatokra?</h2>
+      <h2>9. Hogyan vigyázok az adatokra?</h2>
       <p>
-        A weboldal titkosított kapcsolaton (HTTPS) érhető el. A rendszereinkhez csak azok
+        A weboldal titkosított kapcsolaton (HTTPS) érhető el. A rendszereimhez csak azok
         férnek hozzá, akiknek a munkájukhoz feltétlenül szükséges, jelszóval és
-        kétlépcsős azonosítással. A szolgáltatóinkat úgy választjuk meg, hogy megfelelő
+        kétlépcsős azonosítással. A szolgáltatóimat úgy választom meg, hogy megfelelő
         adatbiztonsági garanciákat nyújtsanak.
       </p>
 
       <h2>10. Ha változik ez a tájékoztató</h2>
       <p>
-        Ha lényegesen módosítjuk – például új adatfeldolgozó lép be, vagy új célra
-        kezdünk adatot kezelni –, arról e-mailben értesítünk, mielőtt életbe lép. A kisebb
-        pontosításokat itt vezetjük át, és frissítjük a hatálybalépés dátumát.
+        Ha lényegesen módosítom – például új adatfeldolgozó lép be, vagy új célra
+        kezdek adatot kezelni –, arról e-mailben értesítelek, mielőtt életbe lép. A kisebb
+        pontosításokat itt vezetem át, és frissítem a hatálybalépés dátumát.
       </p>
 
       <h2>11. Kapcsolódó dokumentumok</h2>

@@ -22,7 +22,7 @@ export default function Aszf() {
   return (
     <LegalShell
       title="Általános Szerződési Feltételek"
-      intro="Röviden: naponta három mesét küldünk e-mailben, az első 10 nap ingyen van, utána havidíjas az előfizetés, és bármikor lemondhatod a következő hónap kezdete előtt."
+      intro="Röviden: naponta három mesét küldök e-mailben, az első 10 nap ingyen van, utána havidíjas az előfizetés, és bármikor lemondhatod a következő hónap kezdete előtt."
       updatedAt={legalUpdatedAt}
     >
       <h2>1. A szolgáltató adatai</h2>
@@ -48,8 +48,8 @@ export default function Aszf() {
         </li>
       </ul>
       <p>
-        A szolgáltató e-mailen érhető el. Ügyfélszolgálati telefonszámot nem tartunk fenn;
-        a megkeresésekre munkanapokon, legkésőbb 2 munkanapon belül válaszolunk.
+        A szolgáltató e-mailen érhető el. Ügyfélszolgálati telefonszámot nem tartok fenn;
+        a megkeresésekre munkanapokon, legkésőbb 2 munkanapon belül válaszolok.
       </p>
 
       <h2>2. Mire vonatkoznak ezek a feltételek?</h2>
@@ -89,7 +89,7 @@ export default function Aszf() {
       <p>
         A mesék a szolgáltató saját, eredeti írásai. A napi válogatás összetétele a
         szolgáltató szerkesztői döntése; konkrét mese vagy téma megküldésére nem
-        vállalunk kötelezettséget. A szolgáltatás nem tartalmaz hangoskönyvet, nyomtatott
+        vállalok kötelezettséget. A szolgáltatás nem tartalmaz hangoskönyvet, nyomtatott
         kiadványt és személyes tanácsadást.
       </p>
 
@@ -97,7 +97,7 @@ export default function Aszf() {
       <ol>
         <li>Megadod az e-mail címedet a weboldalon, és elfogadod ezeket a feltételeket.</li>
         <li>
-          Küldünk egy megerősítő e-mailt. A benne lévő linkre kattintva igazolod, hogy a
+          Küldök egy megerősítő e-mailt. A benne lévő linkre kattintva igazolod, hogy a
           cím valóban a tiéd.
         </li>
         <li>
@@ -105,20 +105,20 @@ export default function Aszf() {
           próbaidőszak</strong>, és másnap délután megérkezik az első három mese.
         </li>
         <li>
-          A próbaidőszak lejárta előtt e-mailben szólunk. Ha nem lépsz semmit, az
+          A próbaidőszak lejárta előtt e-mailben szólok. Ha nem lépsz semmit, az
           előfizetés <strong>nem indul el automatikusan</strong>: külön kell megrendelned.
         </li>
       </ol>
       <p>
         Az adatbeviteli hibákat a megrendelés elküldése előtt bármikor javíthatod, később
-        pedig e-mailben jelezheted, és mi javítjuk.
+        pedig e-mailben jelezheted, és mi javítom.
       </p>
 
       <h2>5. A próbaidőszak</h2>
       <p>
         Az első {price.trialDays} nap ingyenes és kötelezettségmentes. Bankkártyaadatot nem
-        kérünk hozzá, ezért a próbaidőszak végén magától semmi nem indul el, és nem
-        terhelünk semmit. Egy e-mail cím egy alkalommal veheti igénybe a próbaidőszakot.
+        kérek hozzá, ezért a próbaidőszak végén magától semmi nem indul el, és nem
+        vonok le semmit. Egy e-mail cím egy alkalommal veheti igénybe a próbaidőszakot.
       </p>
 
       <h2>6. Díjak és fizetés</h2>
@@ -130,17 +130,17 @@ export default function Aszf() {
         A díjat előre, havonta kell megfizetni. A fizetés a{" "}
         <Todo>{paymentProvider.name}</Todo> fizetési szolgáltatón keresztül történik;
         bankkártyaadatot a szolgáltató nem lát és nem tárol. A számlát elektronikusan
-        állítjuk ki, és e-mailben küldjük meg. Ezt a regisztrációval kifejezetten
+        állítom ki, és e-mailben küldöm meg. Ezt a regisztrációval kifejezetten
         elfogadod.
       </p>
       <p>
         A díjat a szolgáltató módosíthatja. A változásról legalább 30 nappal előre
-        e-mailben értesítünk, és az új díj csak a következő számlázási időszaktól lép
+        e-mailben értesítelek, és az új díj csak a következő számlázási időszaktól lép
         érvénybe. Ha nem fogadod el, a hatálybalépés előtt felmondhatod az előfizetést.
       </p>
       <p>
         Ha a díj beszedése nem sikerül, e-mailben jelezzük. Ha 7 napon belül sem rendeződik,
-        a hozzáférést felfüggeszthetjük.
+        a hozzáférést felfüggeszthetem.
       </p>
 
       <h2>7. Az előfizetés lemondása</h2>
@@ -153,18 +153,18 @@ export default function Aszf() {
         A lemondáshoz elég a fiókodban egy kattintás, vagy egy e-mail a{" "}
         <a href={`mailto:${provider.email}`}>{provider.email}</a> címre. A felmondás a
         folyamatban lévő, már kifizetett időszak végén lép hatályba – addig a szolgáltatás
-        elérhető marad, és időarányos visszatérítést nem fizetünk.
+        elérhető marad, és időarányos visszatérítést nem fizetek.
       </p>
       <p>
         A szolgáltató is felmondhatja a szerződést 30 napos határidővel, illetve azonnali
         hatállyal, ha súlyosan megszeged ezeket a feltételeket (például továbbadod a
-        meséket). Ilyenkor a már kifizetett, fel nem használt időszak díját visszatérítjük.
+        meséket). Ilyenkor a már kifizetett, fel nem használt időszak díját visszatérítem.
       </p>
 
       <h2>8. Elállási jog</h2>
       <p>
         A szolgáltatás digitális tartalom szolgáltatása, amelyet nem tárgyi adathordozón
-        nyújtunk. A fogyasztó és a vállalkozás közötti szerződések részletes szabályairól
+        nyújtok. A fogyasztó és a vállalkozás közötti szerződések részletes szabályairól
         szóló <strong>45/2014. (II. 26.) Korm. rendelet</strong> 20. §-a alapján a
         fogyasztót 14 napos elállási jog illetné meg, ugyanezen rendelet{" "}
         <strong>29. § (1) bekezdés m) pontja</strong> szerint azonban ez a jog nem
@@ -175,7 +175,7 @@ export default function Aszf() {
       <p>
         A megrendeléskor ezért kifejezetten kérned kell a teljesítés azonnali megkezdését,
         és nyilatkoznod kell arról, hogy ezt tudomásul veszed. Ha ezt nem teszed meg, a
-        teljesítést a 14 napos határidő leteltéig nem kezdjük meg, és addig elállhatsz.
+        teljesítést a 14 napos határidő leteltéig nem kezdem meg, és addig elállhatsz.
       </p>
       <p>
         Ez a korlátozás <strong>nem érinti a felmondási jogodat</strong>: az előfizetést a
@@ -199,10 +199,10 @@ export default function Aszf() {
 
       <h2>10. Rendelkezésre állás, felelősség</h2>
       <p>
-        A szolgáltatás elérhetőségére törekszünk, de folyamatos, hibamentes működést nem
-        tudunk garantálni: karbantartás, a tárhelyszolgáltató hibája vagy más, rajtunk
+        A szolgáltatás elérhetőségére törekszem, de folyamatos, hibamentes működést nem
+        tudok garantálni: karbantartás, a tárhelyszolgáltató hibája vagy más, rajtam
         kívül álló ok időszakos kiesést okozhat. Ha a kiesés egy hónapban a 3 napot
-        meghaladja, kérésre időarányos jóváírást adunk a következő hónapra.
+        meghaladja, kérésre időarányos jóváírást adok a következő hónapra.
       </p>
       <p>
         A mesék szórakoztató és nevelési célúak; nem minősülnek pedagógiai, pszichológiai
@@ -214,16 +214,16 @@ export default function Aszf() {
       </p>
       <p>
         A weboldal működéséhez internetkapcsolat és e-mail cím szükséges. Ha az
-        e-mailjeink a levélszemét mappába kerülnek, ezért nem tudunk felelősséget vállalni,
-        de szívesen segítünk beállítani.
+        e-mailjeim a levélszemét mappába kerülnek, ezért nem tudok felelősséget vállalni,
+        de szívesen segítek beállítani.
       </p>
 
       <h2>11. Panasz és jogorvoslat</h2>
       <p>
         Panaszt a <a href={`mailto:${provider.email}`}>{provider.email}</a> címen tehetsz.
-        A panaszt kivizsgáljuk, és <strong>30 napon belül</strong> írásban válaszolunk.
+        A panaszt kivizsgálom, és <strong>30 napon belül</strong> írásban válaszolok.
       </p>
-      <p>Ha nem értünk egyet, az alábbi lehetőségeid vannak:</p>
+      <p>Ha nem sikerül megegyeznünk, az alábbi lehetőségeid vannak:</p>
       <ul>
         <li>
           <strong>Fogyasztóvédelmi hatóság:</strong> a lakóhelyed szerint illetékes
@@ -268,7 +268,7 @@ export default function Aszf() {
       <h2>13. Egyéb</h2>
       <p>
         A szolgáltató jogosult ezeket a feltételeket módosítani. A módosításról legalább 15
-        nappal a hatálybalépés előtt e-mailben értesítünk. Ha a módosítást nem fogadod el,
+        nappal a hatálybalépés előtt e-mailben értesítelek. Ha a módosítást nem fogadod el,
         a hatálybalépésig felmondhatod az előfizetést; a további használat a módosítás
         elfogadásának minősül.
       </p>

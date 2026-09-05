@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Zsuzsi néni meséi",
   },
   description:
-    "Minden nap három friss esti mese e-mailben. A gyermeked választ egyet, te felolvasod. 10 nap ingyen, utána 5 000 Ft / hó, bármikor lemondható.",
+    "Minden nap három friss esti mesét küldök e-mailben. A gyermeked választ egyet, te felolvasod. 10 nap ingyen, utána 5 000 Ft / hó, bármikor lemondható.",
   keywords: [
     "esti mese",
     "mese gyerekeknek",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Zsuzsi néni meséi",
     title: "Zsuzsi néni meséi – minden este egy új történet",
     description:
-      "Minden nap három friss esti mese e-mailben. A gyermeked választ egyet, te felolvasod. 10 nap ingyen.",
+      "Minden nap három friss esti mesét küldök e-mailben. A gyermeked választ egyet, te felolvasod. 10 nap ingyen.",
     images: [
       {
         url: "/og.jpg",

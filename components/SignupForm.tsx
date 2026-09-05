@@ -55,10 +55,10 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
             : "bg-night-900/5 text-ink ring-1 ring-night-900/10"
         }`}
       >
-        <p className="font-semibold">Megjött, köszönjük. 🌙</p>
+        <p className="font-semibold">Megvagytok, köszönöm! 🌙</p>
         <p className={dark ? "mt-1 text-cream/75" : "mt-1 text-ink-soft"}>
-          Küldtünk egy e-mailt, kattints rá, és holnap délután már ott az első három
-          mese.
+          Küldtem egy e-mailt, kattints rá, és holnap délután már ott lesz nálatok az
+          első három mese.
         </p>
       </div>
     );
@@ -104,7 +104,7 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
       </div>
 
       <p className={`mt-3 text-xs ${dark ? "text-cream/55" : "text-ink-soft"}`}>
-        Bankkártyát nem kérünk. A tizedik nap előtt írunk, hogy dönthess. A
+        Bankkártyát nem kérek. A tizedik nap előtt írok, hogy dönthessetek. A
         feliratkozással elfogadod az{" "}
         <TrackedLink
           className="underline underline-offset-2"
@@ -132,7 +132,7 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
           <a className="underline" href="mailto:hello@zsuzsineni-mesei.hu">
             hello@zsuzsineni-mesei.hu
           </a>{" "}
-          címre, és szólunk, amint élesítjük.
+          címre, és szólok, amint élesítem.
         </p>
       )}
       {status === "error" && (

@@ -7,7 +7,7 @@ import { legalUpdatedAt, provider } from "@/lib/legal";
 export const metadata: Metadata = {
   title: "Süti (cookie) szabályzat",
   description:
-    "A Zsuzsi néni meséi oldalon nincs analitikai és nincs marketing süti, és nem futtatunk külső nyomkövető szkriptet. Itt leírjuk, mit tárolunk és mit nem.",
+    "A Zsuzsi néni meséi oldalon nincs analitikai és nincs marketing süti, és nem futtatok külső nyomkövető szkriptet. Itt leírom, mit tárolok és mit nem.",
   robots: { index: true, follow: true },
 };
 
@@ -15,7 +15,7 @@ export default function CookieSzabalyzat() {
   return (
     <LegalShell
       title="Süti (cookie) szabályzat"
-      intro="A rövid válasz: ezen az oldalon nincs analitikai és nincs marketing süti, és semmit nem tárolunk rólad. Annyi történik, hogy néhány gomb megnyomását összesítve megszámoljuk – név, IP és süti nélkül. Ezért nem is dobunk fel süti-sávot."
+      intro="A rövid válasz: ezen az oldalon nincs analitikai és nincs marketing süti, és semmit nem tárolok rólad. Annyi történik, hogy néhány gomb megnyomását összesítve megszámolom – név, IP és süti nélkül. Ezért nem is dobok fel süti-sávot."
       updatedAt={legalUpdatedAt}
     >
       <h2>1. Röviden</h2>
@@ -27,15 +27,15 @@ export default function CookieSzabalyzat() {
           <strong>Nincs Meta Pixel</strong>, nincs hirdetési vagy remarketing kód.
         </li>
         <li>
-          <strong>Nem profilozunk</strong>, és nem adunk el adatot senkinek.
+          <strong>Nem profilozok</strong>, és nem adok el adatot senkinek.
         </li>
         <li>
-          <strong>Néhány gombnyomást megszámolunk</strong>, de csak összesítve, süti és
-          azonosító nélkül. A 4. pontban részletesen leírjuk.
+          <strong>Néhány gombnyomást megszámolok</strong>, de csak összesítve, süti és
+          azonosító nélkül. A 4. pontban részletesen leírom.
         </li>
         <li>
-          <strong>Egyetlen dolgot tárolunk a böngésződben</strong>: a főoldalon bejelölt
-          mesekategóriákat. Ez nálad marad, hozzánk nem kerül át.
+          <strong>Egyetlen dolgot tárolok a böngésződben</strong>: a főoldalon bejelölt
+          mesekategóriákat. Ez nálad marad, hozzám nem kerül át.
         </li>
       </ul>
 
@@ -47,9 +47,9 @@ export default function CookieSzabalyzat() {
         egy fontos különbséggel: a benne lévő adat <em>nem</em> megy át magától a
         kiszolgálóra, csak a te böngésződben létezik.
       </p>
-      <p>Ezen az oldalon jelenleg csak az utóbbit használjuk.</p>
+      <p>Ezen az oldalon jelenleg csak az utóbbit használom.</p>
 
-      <h2>3. Mit tárolunk pontosan?</h2>
+      <h2>3. Mit tárolok pontosan?</h2>
       <table>
         <thead>
           <tr>
@@ -76,17 +76,17 @@ export default function CookieSzabalyzat() {
         </tbody>
       </table>
       <p>
-        Ezen kívül <strong>jelenleg egyetlen sütit sem helyezünk el</strong> a
+        Ezen kívül <strong>jelenleg egyetlen sütit sem helyezek el</strong> a
         böngésződben.
       </p>
 
-      <h2>4. Amit megszámolunk: gombnyomások, összesítve</h2>
+      <h2>4. Amit megszámolok: gombnyomások, összesítve</h2>
       <p>
-        Szeretnénk tudni, hogy melyik gomb és melyik mese érdekli az embereket, mert
-        ebből tudjuk, mit érdemes javítani. Ehhez viszont nem kell megtudnunk, hogy ki
-        vagy, ezért <strong>nem is tudjuk meg</strong>.
+        Szeretném tudni, hogy melyik gomb és melyik mese érdekli az embereket, mert
+        ebből tudom, mit érdemes javítani. Ehhez viszont nem kell megtudnom, hogy ki
+        vagy, ezért <strong>nem is tudom meg</strong>.
       </p>
-      <p>Amikor például megnyitsz egy mesét, a szerverünk annyit jegyez fel, hogy</p>
+      <p>Amikor például megnyitsz egy mesét, a szerverem annyit jegyez fel, hogy</p>
       <ul>
         <li>ma egy „mese megnyitása” eseménnyel több történt,</li>
         <li>és hogy melyik mese címéhez tartozott.</li>
@@ -102,17 +102,17 @@ export default function CookieSzabalyzat() {
       <p>
         A tárolt adat tehát ennyi: <em>„2026-09-05, mese megnyitása, A hold, aki elaludt,
         6 darab.”</em> Ez nem személyes adat, mert senkire nem vezethető vissza, és épp
-        ezért nem esik a süti-hozzájárulás szabályai alá sem: nem tárolunk és nem olvasunk
+        ezért nem esik a süti-hozzájárulás szabályai alá sem: nem tárolok és nem olvasok
         ki semmit a végberendezésedről.
       </p>
       <p>
         Ezt a mérést az összes gombra kiterjesztettük (fejléc, menü, mesék, kategóriák,
         GYIK-kérdések, űrlap, Facebook-link, jogi oldalak), és az eredményt egy jelszóval
-        védett belső oldalon nézzük meg. Külső szolgáltatót nem használunk hozzá: a számok
-        a saját tárhelyünkön maradnak.
+        védett belső oldalon nézem meg. Külső szolgáltatót nem használok hozzá: a számok
+        a saját tárhelyemen maradnak.
       </p>
 
-      <h2>5. Mit NEM használunk?</h2>
+      <h2>5. Mit NEM használok?</h2>
       <p>Hogy egyértelmű legyen, itt van tételesen, mi nincs az oldalon:</p>
       <ul>
         <li>külső látogatottság-mérő (Google Analytics, Plausible, Matomo és társaik),</li>
@@ -120,7 +120,7 @@ export default function CookieSzabalyzat() {
         <li>hőtérkép és munkamenet-felvétel (Hotjar, Clarity és hasonlók),</li>
         <li>A/B tesztelő és személyre szabó eszközök,</li>
         <li>beágyazott közösségi tartalom (YouTube-videó, Facebook-doboz, térkép),</li>
-        <li>külső betűtípus-kiszolgáló: a betűket a saját kiszolgálónkról töltjük be.</li>
+        <li>külső betűtípus-kiszolgáló: a betűket a saját kiszolgálónkról töltöm be.</li>
       </ul>
       <p>
         A láblécben és a fejlécben található Facebook-hivatkozás egyszerű link. Amíg nem
@@ -133,26 +133,26 @@ export default function CookieSzabalyzat() {
       <p>
         Mert nem lenne mit engedélyezned. Hozzájárulást kérni azokra a sütikre kell,
         amelyek nem feltétlenül szükségesek a szolgáltatás működéséhez – ilyet pedig nem
-        használunk, és a 4. pontban leírt darabszámláláshoz sem tárolunk semmit a
-        böngésződben. Egy olyan sávot pedig nem teszünk ki, amin nincs valódi választás:
-        ennél többre tartunk téged.
+        használok, és a 4. pontban leírt darabszámláláshoz sem tárolok semmit a
+        böngésződben. Egy olyan sávot pedig nem teszek ki, amin nincs valódi választás:
+        ennél többre tartok téged.
       </p>
       <p>
-        Ez a helyzet bármikor megváltozhat. Ha egyszer statisztikát vagy hirdetést kezdünk
-        mérni, akkor <strong>előtte</strong> kérünk rá hozzájárulást, valódi „Elutasítom”
-        gombbal, és ezt az oldalt is frissítjük.
+        Ez a helyzet bármikor megváltozhat. Ha egyszer statisztikát vagy hirdetést kezdek
+        mérni, akkor <strong>előtte</strong> kérek rá hozzájárulást, valódi „Elutasítom”
+        gombbal, és ezt az oldalt is frissítem.
       </p>
 
-      <h2>7. Mi lesz, ha bevezetjük a bejelentkezést?</h2>
+      <h2>7. Mi lesz, ha bevezetem a bejelentkezést?</h2>
       <p>
         Az előfizetői fiókhoz szükség lesz egy <strong>munkamenet-sütire</strong>, amiből a
         kiszolgáló felismeri, hogy be vagy jelentkezve. Ez a működéshez feltétlenül
         szükséges süti: nélküle nem lehetne belépni, ezért az elektronikus hírközlésről
         szóló 2003. évi C. törvény 155. § (4) bekezdése és a GDPR alapján nem kell hozzá
-        külön hozzájárulás. Statisztikára vagy hirdetésre ezt sem fogjuk használni.
+        külön hozzájárulás. Statisztikára vagy hirdetésre ezt sem fogom használni.
       </p>
       <p>
-        Amikor ez élesedik, itt fogjuk feltüntetni a süti nevét, célját és lejáratát is.
+        Amikor ez élesedik, itt fogom feltüntetni a süti nevét, célját és lejáratát is.
       </p>
 
       <h2>8. Hogyan törölheted vagy tilthatod le?</h2>
@@ -177,8 +177,8 @@ export default function CookieSzabalyzat() {
 
       <h2>9. Ha változik ez a szabályzat</h2>
       <p>
-        Ha új sütit vagy tárolt adatot vezetünk be, azt itt vezetjük át, és frissítjük a
-        hatálybalépés dátumát. Ha a változás hozzájárulást igényel, előre kérjük.
+        Ha új sütit vagy tárolt adatot vezetek be, azt itt vezetem át, és frissítem a
+        hatálybalépés dátumát. Ha a változás hozzájárulást igényel, előre kérem.
       </p>
 
       <h2>10. Kapcsolódó dokumentumok</h2>

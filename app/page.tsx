@@ -11,17 +11,17 @@ import { site } from "@/lib/content";
 const steps = [
   {
     n: "1",
-    title: "Beállítod, mit szerettek",
-    body: "Bejelölöd a kategóriákat és a gyerek korát. Nem tart tovább két percnél, és később bármikor átírhatod.",
+    title: "Beállítjátok, mit szerettek",
+    body: "Bejelölitek a kategóriákat és a gyermeked korát. Nem tart tovább két percnél, és később bármikor átírhatjátok.",
   },
   {
     n: "2",
     title: "Délután megérkezik a hármas",
-    body: "Kora délután jön az e-mail: három mese, mindegyiknél ott a cím, a hangulat és hogy hány perc felolvasni. Vacsora közben már tudod, mi lesz.",
+    body: "Kora délután küldöm az e-mailt: három mese, mindegyiknél ott a cím, a hangulat és hogy hány perc felolvasni. Vacsora közben már tudjátok, mi lesz.",
   },
   {
     n: "3",
-    title: "A gyerek választ, te felolvasod",
+    title: "A gyermeked választ, te felolvasod",
     body: "Megmutatod neki a hármat, ő választ. Egy kattintás, és ott a teljes mese: nagy betűk, reklám nélkül, telefonra szabva.",
   },
 ];
@@ -35,18 +35,18 @@ const promises = [
   },
   {
     icon: "⭐",
-    title: "Minden nap 3 mese, te választasz",
-    body: "Nem egy kötelező adag érkezik, hanem három lehetőség. A döntés nálatok marad.",
+    title: "Minden nap 3 mese, ti választotok",
+    body: "Nem egy kötelező adagot küldök, hanem három lehetőséget. A döntés nálatok marad.",
   },
   {
     icon: "🌱",
     title: "Nyugodtabb esték",
-    body: "Fél nyolckor már nem azon gondolkodsz, mit meséljetek. Ott a három, csak rá kell bökni.",
+    body: "Fél nyolckor már nem azon gondolkodtok, mit meséljetek. Ott a három, csak választanotok kell.",
   },
   {
     icon: "🌈",
     title: "Boldogabb gyerekek",
-    body: "Sokat jelent neki, hogy a nap végén ő dönthet valamiről. Sokszor ettől lesz könnyebb a lefekvés is.",
+    body: "Sokat jelent a gyermekednek, hogy a nap végén ő dönthet valamiről. Sokszor ettől lesz könnyebb a lefekvés is.",
   },
 ];
 
@@ -54,32 +54,32 @@ const benefits = [
   {
     emoji: "⏱️",
     title: "Tudod, mennyi idő",
-    body: "Minden mesénél ott van, hány perc. Ha ma tényleg csak öt perc van, öt percest választotok.",
+    body: "Minden mesénél odaírom, hány perc. Ha ma tényleg csak öt perc van, öt percest választotok.",
   },
   {
     emoji: "📵",
     title: "Képernyő helyett hang",
-    body: "A telefon nálad marad, a gyerek csak téged hall. Nincs villogás, és nem indul el magától a következő rész.",
+    body: "A telefon nálad marad, a gyermeked csak téged hall. Nincs villogás, és nem indul el magától a következő rész.",
   },
   {
     emoji: "🌙",
     title: "Elalvásra hangolva",
-    body: "A meséknek nincs nyitva hagyott, izgalmas vége. Úgy zárulnak, hogy utána le lehessen kapcsolni a villanyt.",
+    body: "Nem hagyom nyitva a mesék végét. Úgy zárom le őket, hogy utána le lehessen kapcsolni a villanyt.",
   },
   {
     emoji: "🎒",
     title: "Veletek együtt változik",
-    body: "Ahogy nő a gyerek, más témák érdeklik. Elég átállítanod a kategóriákat, és követi a válogatás.",
+    body: "Ahogy nő a gyermeked, más témák érdeklik. Elég átállítanotok a kategóriákat, és a válogatás követi.",
   },
   {
     emoji: "✍️",
     title: "Eredeti mesék",
-    body: "Minden mesét mi írunk, magyarul. Nincs köztük netről összeszedett vagy gépből fordított szöveg.",
+    body: "Minden mesét én írok, magyarul. Nincs köztük netről összeszedett vagy gépből fordított szöveg.",
   },
   {
     emoji: "💌",
     title: "Nem app, csak egy e-mail",
-    body: "Nem kell letölteni semmit, és nem kell esténként bejelentkezni. Megjön, megnyitod, olvasod.",
+    body: "Nem kell letöltenetek semmit, és nem kell esténként bejelentkezni. Megjön, megnyitod, olvasod.",
   },
 ];
 
@@ -117,7 +117,7 @@ export default function Home() {
               </p>
 
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
-                Minden délután küldünk három mesét. Megmutatod a gyermekednek, ő
+                Minden délután küldök nektek három mesét. Megmutatod a gyermekednek, ő
                 kiválasztja a témát, és együtt élvezitek a mese hullámait. Másnapra is
                 választhattok egyet.
               </p>
@@ -235,7 +235,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Egy példa"
               title="Ez érkezett ma"
-              lead="Ez a mai hármas. Nyisd meg bármelyiket, és elolvashatod a teljes mesét – pont úgy, ahogy előfizetőként is látnád."
+              lead="Ez a mai hármas. Nyissátok meg bármelyiket, és elolvashatjátok a teljes mesét – pont úgy, ahogy előfizetőként is látnátok."
             />
             <div className="mt-12">
               <StoryPicker />
@@ -249,7 +249,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Három lépés"
               title="Hogyan működik"
-              lead="Egyszer beállítod, onnantól már csak felolvasol."
+              lead="Egyszer beállítjátok, onnantól már csak felolvasol."
             />
 
             <ol className="mt-12 grid gap-6 md:grid-cols-3">
@@ -272,7 +272,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Ti szabjátok testre"
               title="Milyen meséket szeretnétek?"
-              lead="Jelöld be, ami érdekel. A holnapi hármas már ehhez igazodik, és később is átírhatod."
+              lead="Jelöljétek be, ami érdekel titeket. A holnapi hármast már ehhez igazítom, és később is átírhatjátok."
             />
             <div className="mt-12">
               <CategoryPicker />
@@ -320,7 +320,7 @@ export default function Home() {
                   </p>
                   <p className="mt-3 font-display text-4xl font-bold">10 nap ingyen</p>
                   <p className="mt-3 text-sm leading-relaxed text-cream/70">
-                    Harminc mese, minden funkcióval. Bankkártyát nem kérünk hozzá, szóval a
+                    Harminc mese, minden funkcióval. Bankkártyát nem kérek hozzá, szóval a
                     végén sem indul el semmi magától.
                   </p>
                 </div>
@@ -367,11 +367,11 @@ export default function Home() {
         <section id="regisztracio" className="starfield scroll-mt-20 py-20 text-cream lg:py-24">
           <div className="mx-auto w-full max-w-2xl px-5 text-center">
             <h2 className="font-display text-3xl font-bold leading-tight sm:text-4xl">
-              Ma este már választhat.
+              Ma este már ő választhat.
             </h2>
             <p className="mt-4 text-lg text-cream/75">
-              Írd be az e-mail címed, és holnap délután itt az első három mese. Tíz napig
-              ingyen, és bankkártyát nem kérünk.
+              Írd be az e-mail címed, és holnap délután küldöm az első három mesét. Tíz
+              napig ingyen, és bankkártyát nem kérek.
             </p>
             <div className="mt-9 text-left">
               <SignupForm variant="dark" />
