@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Baloo_2, Caveat, Nunito } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const display = Baloo_2({
@@ -20,7 +21,7 @@ const hand = Caveat({
   display: "swap",
 });
 
-const siteUrl = "https://zsuzsineni-mesei.hu";
+const siteUrl = SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

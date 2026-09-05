@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { categories } from "@/lib/content";
 import { WEB3FORMS_ENDPOINT, WEB3FORMS_KEY } from "@/lib/forms";
+import { SITE_URL } from "@/lib/site";
 import { track } from "@/lib/track";
 import { TrackedLink } from "./TrackedLink";
 import { usePreferences } from "./usePreferences";
@@ -13,7 +14,6 @@ type Status = "idle" | "loading" | "unavailable";
 export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const { selected } = usePreferences();
   const [status, setStatus] = useState<Status>("idle");
-  const redirectRef = useRef<HTMLInputElement>(null);
 
   const dark = variant === "dark";
 
@@ -34,9 +34,6 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
       setStatus("unavailable");
       return;
     }
-    if (redirectRef.current) {
-      redirectRef.current.value = `${window.location.origin}/koszonom`;
-    }
     track("feliratkozas_kuldes", dark ? "sötét űrlap" : "világos űrlap");
     setStatus("loading");
     // nincs preventDefault – innen a böngésző küldi el az űrlapot
@@ -53,7 +50,7 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
       <input type="hidden" name="subject" value="Új feliratkozó – Zsuzsi néni meséi" />
       <input type="hidden" name="from_name" value="Zsuzsi néni meséi" />
       <input type="hidden" name="Kategóriák" value={chosen || "(nem választott)"} readOnly />
-      <input type="hidden" name="redirect" ref={redirectRef} defaultValue="" />
+      <input type="hidden" name="redirect" value={`${SITE_URL}/koszonom`} />
       {/* mézesbödön: a Web3Forms eldobja a küldést, ha ki van töltve */}
       <input
         type="checkbox"
@@ -115,8 +112,8 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
       {status === "unavailable" && (
         <p className="mt-3 rounded-xl bg-gold/15 px-4 py-3 text-xs text-gold-soft ring-1 ring-gold/30">
           A regisztráció még nem indult el. Írj addig a{" "}
-          <a className="underline" href="mailto:hello@zsuzsineni-mesei.hu">
-            hello@zsuzsineni-mesei.hu
+          <a className="underline" href="mailto:hello@zsuzsi-neni-mesei.hu">
+            hello@zsuzsi-neni-mesei.hu
           </a>{" "}
           címre, és szólok, amint élesítem.
         </p>

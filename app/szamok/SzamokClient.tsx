@@ -44,7 +44,7 @@ export function SzamokClient() {
     return (
       <main className="mx-auto w-full max-w-md px-5 py-20">
         <h1 className="font-display text-2xl font-bold">Számok</h1>
-        <p className="mt-1 text-sm text-ink-soft">Kattintásmérés – zsuzsineni-mesei.hu</p>
+        <p className="mt-1 text-sm text-ink-soft">Kattintásmérés – zsuzsi-neni-mesei.hu</p>
 
         <form
           className="mt-8 rounded-2xl bg-white p-6 ring-1 ring-cream-300"
@@ -86,7 +86,7 @@ export function SzamokClient() {
         <div>
           <h1 className="font-display text-2xl font-bold">Számok</h1>
           <p className="mt-1 text-sm text-ink-soft">
-            Kattintásmérés – zsuzsineni-mesei.hu. Csak összesített darabszám; se IP, se
+            Kattintásmérés – zsuzsi-neni-mesei.hu. Csak összesített darabszám; se IP, se
             süti, se azonosító.
           </p>
         </div>

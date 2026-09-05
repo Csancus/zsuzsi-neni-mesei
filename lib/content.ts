@@ -95,7 +95,7 @@ export const faq: { q: string; a: string }[] = [
 
 export const site = {
   facebook: "https://www.facebook.com/zsuzsinenimesei/",
-  email: "hello@zsuzsineni-mesei.hu",
+  email: "hello@zsuzsi-neni-mesei.hu",
   tagline: "Minden este egy új történet, közelebb egymáshoz.",
   quote: "A képzelet nagyobbá teszi a világot.",
 };

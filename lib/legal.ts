@@ -15,10 +15,10 @@ export const provider = {
   /** Nyilvántartási szám (egyéni vállalkozói nyilvántartás) */
   registryNumber: TODO("nyilvántartási szám"),
   taxNumber: TODO("adószám"),
-  email: "hello@zsuzsineni-mesei.hu",
+  email: "hello@zsuzsi-neni-mesei.hu",
   /** Ha nem adsz meg telefonszámot, ez a mondat marad: e-mailen elérhető */
   phone: null as string | null,
-  website: "zsuzsineni-mesei.hu",
+  website: "zsuzsi-neni-mesei.hu",
 };
 
 export const hosting = {

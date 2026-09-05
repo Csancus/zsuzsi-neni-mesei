@@ -99,5 +99,5 @@ Minden nyilvános oldal indexelhető, és benne van a `sitemap.xml`-ben. A `/sza
 - [ ] Fizetés (5 000 Ft / hó, 10 nap trial után)
 - [ ] Napi hármas kiküldése a feliratkozóknak (Resend vagy hasonló; a Web3Forms csak az admin-értesítőre való)
 - [ ] Mese-adatbázis és olvasófelület (`/mese/[slug]`)
-- [ ] Valódi domain + OG kép (jelenleg `zsuzsineni-mesei.hu` a placeholder az
+- [ ] Valódi domain + OG kép (jelenleg `zsuzsi-neni-mesei.hu` a placeholder az
       `app/layout.tsx`, `app/robots.ts` és `app/sitemap.ts` fájlokban)
