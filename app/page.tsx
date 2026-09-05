@@ -233,7 +233,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Egy példa"
               title="Ez érkezett ma"
-              lead="Kattints arra, amelyiket felolvasnád. Esténként nagyjából ennyi a dolgod."
+              lead="Ez a mai hármas. Nyisd meg bármelyiket, és elolvashatod a teljes mesét – pont úgy, ahogy előfizetőként is látnád."
             />
             <div className="mt-12">
               <StoryPicker />

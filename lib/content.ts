@@ -1,3 +1,5 @@
+import { storyBodies } from "./stories";
+
 export type Category = {
   id: string;
   name: string;
@@ -27,6 +29,8 @@ export type DemoStory = {
   minutes: number;
   age: string;
   teaser: string;
+  /** A teljes mese bekezdésekre bontva – a felolvasó nézet ezt jeleníti meg. */
+  body: string[];
 };
 
 export const demoStories: DemoStory[] = [
@@ -38,6 +42,7 @@ export const demoStories: DemoStory[] = [
     age: "3–6 év",
     teaser:
       "Egy este a Hold nem kelt fel. A kisváros gyerekei elindultak felébreszteni, de úgy, hogy közben senki más ne ébredjen fel.",
+    body: storyBodies["A hold, aki elaludt"],
   },
   {
     title: "Bátor Samu és a viharos tó",
@@ -47,6 +52,7 @@ export const demoStories: DemoStory[] = [
     age: "4–8 év",
     teaser:
       "Samu, a sünfiú elkérte a nagypapa csónakját. A tó közepén felhők gyűltek, és kiderült, hogy a bátorság néha annyit tesz: visszafordulsz.",
+    body: storyBodies["Bátor Samu és a viharos tó"],
   },
   {
     title: "Miért mérges a kis sárkány?",
@@ -56,6 +62,7 @@ export const demoStories: DemoStory[] = [
     age: "3–7 év",
     teaser:
       "Zente minden apróságtól füstöt fújt, amíg egy öreg teknős meg nem tanította neki a három lassú lélegzetet.",
+    body: storyBodies["Miért mérges a kis sárkány?"],
   },
 ];
 

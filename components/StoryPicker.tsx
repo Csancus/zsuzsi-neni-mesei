@@ -1,38 +1,42 @@
 "use client";
 
 import { useState } from "react";
+
 import { demoStories } from "@/lib/content";
+import { StoryModal } from "./StoryModal";
 
 export function StoryPicker() {
-  const [picked, setPicked] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [readIndexes, setReadIndexes] = useState<number[]>([]);
+
+  function open(i: number) {
+    setOpenIndex(i);
+    setReadIndexes((prev) => (prev.includes(i) ? prev : [...prev, i]));
+  }
 
   return (
     <div>
       <div className="grid gap-4 md:grid-cols-3">
         {demoStories.map((story, i) => {
-          const active = picked === i;
+          const read = readIndexes.includes(i);
           return (
             <button
               key={story.title}
               type="button"
-              onClick={() => setPicked(active ? null : i)}
-              aria-pressed={active}
-              className={`group flex h-full flex-col rounded-3xl p-6 text-left transition duration-200 ${
-                active
-                  ? "-translate-y-1 bg-white ring-2 ring-gold card-glow"
-                  : "bg-white/70 ring-1 ring-cream-300 hover:-translate-y-1 hover:bg-white hover:ring-cream-200"
+              onClick={() => open(i)}
+              aria-haspopup="dialog"
+              className={`group flex h-full cursor-pointer flex-col rounded-3xl p-6 text-left transition duration-200 hover:-translate-y-1 hover:bg-white hover:ring-gold ${
+                read
+                  ? "bg-white ring-2 ring-gold/60 card-glow"
+                  : "bg-white/70 ring-1 ring-cream-300"
               }`}
             >
               <div className="flex items-start justify-between gap-3">
                 <span aria-hidden className="text-3xl">
                   {story.emoji}
                 </span>
-                <span
-                  className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide transition ${
-                    active ? "bg-gold text-night-900" : "bg-cream-200 text-ink-soft"
-                  }`}
-                >
-                  {active ? "Ez lesz ma" : story.category}
+                <span className="rounded-full bg-cream-200 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-ink-soft">
+                  {story.category}
                 </span>
               </div>
 
@@ -53,19 +57,26 @@ export function StoryPicker() {
                 </span>
                 <span>{story.age}</span>
               </div>
+
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-night-600 transition group-hover:gap-2.5">
+                {read ? "Újra elolvasom" : "Elolvasom"}
+                <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M5 12h13M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
             </button>
           );
         })}
       </div>
 
-      <p
-        aria-live="polite"
-        className="mt-6 text-center text-sm text-ink-soft"
-      >
-        {picked === null
-          ? "Kattints arra, amelyiket felolvasnád. Nálatok ezt a gyerek dönti el."
-          : `Akkor ma ez lesz: „${demoStories[picked].title}”. Holnap jön a következő három.`}
+      <p className="mt-6 text-center text-sm text-ink-soft">
+        Kattints bármelyikre, és elolvashatod az egész mesét. Esténként nálatok ezt a
+        gyerek választja ki.
       </p>
+
+      {openIndex !== null && (
+        <StoryModal story={demoStories[openIndex]} onClose={() => setOpenIndex(null)} />
+      )}
     </div>
   );
 }
