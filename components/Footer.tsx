@@ -9,7 +9,7 @@ export function Footer() {
         <div className="max-w-sm">
           <Logo className="text-cream" />
           <p className="mt-4 text-sm leading-relaxed">
-            Naponta három esti mese e-mailben. A gyerek választ egyet, te felolvasod.
+            Naponta három esti mese e-mailben. A gyermeked választ egyet, te felolvasod.
             Este fél nyolckor nem kell kitalálnod semmit.
           </p>
           <TrackedLink

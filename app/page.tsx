@@ -109,7 +109,7 @@ export default function Home() {
               <h1 className="mt-6 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
                 Minden este három mese.
                 <br />
-                <span className="text-gold-soft">A gyerek választ egyet.</span>
+                <span className="text-gold-soft">A gyermeked választ egyet.</span>
               </h1>
 
               <p className="mt-5 font-hand text-2xl text-cream/85 sm:text-[1.7rem]">
@@ -117,8 +117,9 @@ export default function Home() {
               </p>
 
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream/75">
-                Minden délután küldünk három mesét. Megmutatod a gyereknek, ő rábök az
-                egyikre, te pedig felolvasod. Nagyjából ennyi.
+                Minden délután küldünk három mesét. Megmutatod a gyermekednek, ő
+                kiválasztja a témát, és együtt élvezitek a mese hullámait. Másnapra is
+                választhattok egyet.
               </p>
 
               <div className="mt-8 max-w-xl">

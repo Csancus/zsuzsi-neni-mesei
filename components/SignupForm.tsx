@@ -78,7 +78,7 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="a.te@email.hu"
+          placeholder="pelda@email.com"
           className={`h-13 min-w-0 flex-1 rounded-full px-5 text-base outline-none transition ${
             dark
               ? "bg-white/10 text-cream ring-1 ring-white/20 placeholder:text-cream/40 focus:ring-2 focus:ring-gold"
