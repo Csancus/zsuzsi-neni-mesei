@@ -31,7 +31,7 @@ const promises = [
   {
     icon: "🧡",
     title: "Személyre szabható kategóriák",
-    body: "Ha most éppen az állatok mennek, olyat kaptok. Ha jobban jön valami csendes, akkor olyat. Te mondod meg, miből válogassunk.",
+    body: "Ha most éppen az állatok a kedvenc téma, válasszátok azt, és olyat küldök! Ha jobban örülnétek egy kalandosnak, akkor olyat. Ti választjátok ki a témát a következő napokra.",
   },
   {
     icon: "⭐",
