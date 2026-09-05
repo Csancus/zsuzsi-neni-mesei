@@ -8,8 +8,8 @@ export function Footer() {
         <div className="max-w-sm">
           <Logo className="text-cream" />
           <p className="mt-4 text-sm leading-relaxed">
-            Naponta három friss esti mese e-mailben. A gyerek választ egyet, te
-            felolvasod – és este fél nyolckor nem kell kitalálni semmit.
+            Naponta három esti mese e-mailben. A gyerek választ egyet, te felolvasod.
+            Este fél nyolckor nem kell kitalálnod semmit.
           </p>
           <a
             href={site.facebook}
@@ -46,7 +46,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-5 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Zsuzsi néni meséi</p>
-          <p>Minden mese saját írás – nem gyűjtött, nem másolt.</p>
+          <p>Minden mesét mi írunk.</p>
         </div>
       </div>
     </footer>

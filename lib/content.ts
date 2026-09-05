@@ -6,16 +6,16 @@ export type Category = {
 };
 
 export const categories: Category[] = [
-  { id: "kalandok", name: "Kalandok", emoji: "🗺️", blurb: "Térkép, hajó, elveszett kincs – pörgős fordulatok." },
-  { id: "allatok", name: "Állatok", emoji: "🦊", blurb: "Erdei és háztáji szereplők, barátság és bátorság." },
-  { id: "termeszet", name: "Természet", emoji: "🍂", blurb: "Eső, hó, magvak, csillagok – közben tanul is." },
-  { id: "baratsag", name: "Barátság", emoji: "🤝", blurb: "Összeveszés, kibékülés, együtt könnyebb." },
-  { id: "tanulsagos", name: "Tanulságos mesék", emoji: "📖", blurb: "A végén mindig marad valami, amiről beszélgethettek." },
+  { id: "kalandok", name: "Kalandok", emoji: "🗺️", blurb: "Térkép, csónak, elveszett kincs. Ezekben történik a legtöbb minden." },
+  { id: "allatok", name: "Állatok", emoji: "🦊", blurb: "Erdei és háztáji szereplők, barátkozás és bátorság." },
+  { id: "termeszet", name: "Természet", emoji: "🍂", blurb: "Eső, hó, magvak, csillagok. Közben észrevétlenül tanul is." },
+  { id: "baratsag", name: "Barátság", emoji: "🤝", blurb: "Összeveszés, kibékülés, és hogy együtt könnyebb." },
+  { id: "tanulsagos", name: "Tanulságos mesék", emoji: "📖", blurb: "A végén marad valami, amiről még beszélgethettek." },
   { id: "tundermese", name: "Tündérmesék", emoji: "🧚", blurb: "Varázslat, királylányok, hét próba." },
   { id: "elalvos", name: "Elalvós, csendes", emoji: "🌙", blurb: "Lassú tempó, halk hangok, puha lezárás." },
-  { id: "vicces", name: "Vicces mesék", emoji: "😄", blurb: "Csacsi helyzetek és kacagós poénok." },
-  { id: "erzelmi", name: "Érzésekről", emoji: "💛", blurb: "Düh, féltékenység, félelem – nevén nevezve." },
-  { id: "npmese", name: "Népmesék", emoji: "🪕", blurb: "Magyar népmesekincs mai nyelven." },
+  { id: "vicces", name: "Vicces mesék", emoji: "😄", blurb: "Csacsi helyzetek, amiken nevetni lehet." },
+  { id: "erzelmi", name: "Érzésekről", emoji: "💛", blurb: "Düh, féltékenység, félelem, nevén nevezve." },
+  { id: "npmese", name: "Népmesék", emoji: "🪕", blurb: "Magyar népmesék mai nyelven." },
   { id: "ovi", name: "Ovi és suli", emoji: "🎒", blurb: "Első nap, új barát, elveszett uzsonna." },
   { id: "urhajos", name: "Világűr", emoji: "🚀", blurb: "Bolygók, üstökösök, kicsi űrhajósok." },
 ];
@@ -37,16 +37,16 @@ export const demoStories: DemoStory[] = [
     minutes: 6,
     age: "3–6 év",
     teaser:
-      "Egy este a Hold nem kelt fel. A kisváros gyerekei összefogtak, hogy csendben, lábujjhegyen felébresszék – de csak úgy, hogy közben ne ébredjen fel senki más.",
+      "Egy este a Hold nem kelt fel. A kisváros gyerekei elindultak felébreszteni, de úgy, hogy közben senki más ne ébredjen fel.",
   },
   {
-    title: "Bátor Bogyó és a viharos tó",
+    title: "Bátor Samu és a viharos tó",
     category: "Kalandok",
     emoji: "🗺️",
     minutes: 9,
     age: "4–8 év",
     teaser:
-      "Bogyó, a sünfiú kölcsönkérte a nagypapa csónakját. A tó közepén viszont felhők gyűltek, és kiderült: a bátorság néha azt jelenti, hogy visszafordulunk.",
+      "Samu, a sünfiú elkérte a nagypapa csónakját. A tó közepén felhők gyűltek, és kiderült, hogy a bátorság néha annyit tesz: visszafordulsz.",
   },
   {
     title: "Miért mérges a kis sárkány?",
@@ -55,34 +55,34 @@ export const demoStories: DemoStory[] = [
     minutes: 7,
     age: "3–7 év",
     teaser:
-      "Zente, a sárkánybébi minden apróságtól füstöt fújt. Amíg egy öreg teknős meg nem tanította neki a három lassú lélegzetet.",
+      "Zente minden apróságtól füstöt fújt, amíg egy öreg teknős meg nem tanította neki a három lassú lélegzetet.",
   },
 ];
 
 export const faq: { q: string; a: string }[] = [
   {
     q: "Hogyan érkeznek meg a mesék?",
-    a: "Minden nap kora délután e-mailben kapsz három mesét rövid leírással. Egy kattintás, és megnyílik a kiválasztott mese teljes szövege – telefonon, tableten vagy laptopon egyaránt jól olvasható.",
+    a: "Kora délután kapsz egy e-mailt, benne a három mesével: cím, pár mondat róla, és hogy hány perc felolvasni. Rákattintasz arra, amelyiket választottátok, és megnyílik a teljes szöveg. Telefonon is jól olvasható, nem kell nagyítani.",
   },
   {
     q: "Miért pont három mese?",
-    a: "Mert az esti mese nem csak a szülőről szól. A gyerek is beleszólhat, hogy ma mi legyen – ez a kis döntés sokat segít a lefekvés körüli huzavonában. Három választás elég ahhoz, hogy legyen tere, de nem annyi, hogy elvesszen benne.",
+    a: "Mert az esti mese nem csak rólad szól. Ha a gyerek is beleszólhat, sokkal könnyebben megy a lefekvés. Három választás elég ahhoz, hogy legyen tétje, de nem annyi, hogy elvesszen benne.",
   },
   {
     q: "Milyen korosztálynak szólnak a mesék?",
-    a: "Nagyjából 3 és 8 év közötti gyerekeknek. Minden mesénél feltüntetjük az ajánlott kort és a felolvasási időt, így percre pontosan tudod, mibe vágsz bele fél nyolckor.",
+    a: "Nagyjából hároméves kortól nyolcig. Minden mesénél ott az ajánlott kor és a felolvasási idő, így fél nyolckor sem érhet meglepetés.",
   },
   {
     q: "Meg tudom adni, milyen meséket szeretnék?",
-    a: "Igen. A profilodban bármikor bejelölheted a kedvenc kategóriákat – állatos, tündér, kalandos, elalvós és így tovább. A következő napi válogatás már ezek alapján áll össze, és menet közben is finomíthatsz rajta.",
+    a: "Igen. Bejelölöd a kategóriákat: állatok, kalandok, természet, barátság, tanulságos mesék és a többi. A következő válogatás már ezekből jön, és később is bármikor átállíthatod.",
   },
   {
     q: "Mennyibe kerül?",
-    a: "Az első 10 nap ingyenes. Utána 5 000 Ft havonta, bármikor lemondható – nincs hűségidő, nincs felmondási procedúra.",
+    a: "Az első tíz nap ingyen van. Utána havi 5 000 Ft. Nincs hűségidő, és a lemondáshoz nem kell se telefonálni, se levelezni.",
   },
   {
     q: "Mi történik a próbaidőszak végén?",
-    a: "A 10. nap előtt szólunk e-mailben. Ha nem szeretnéd folytatni, egyetlen kattintás a lemondás, és nem terhelünk semmit.",
+    a: "A tizedik nap előtt írunk. Ha nem folytatnád, egy kattintás, és ennyi. Bankkártyát eleve nem kértünk, szóval magától nem indul el semmi.",
   },
 ];
 

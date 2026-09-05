@@ -24,7 +24,7 @@ npm run lint
 | Útvonal | Mi van benne |
 | --- | --- |
 | `app/page.tsx` | A teljes landing: hero, napi hármas, hogyan működik, kategóriák, előnyök, árak, GYIK, záró CTA |
-| `app/api/signup/route.ts` | Feliratkozás fogadása (validáció + honeypot + Resend értesítő) |
+| `app/api/signup/route.ts` | Feliratkozás fogadása (validáció + honeypot + Web3Forms értesítő) |
 | `components/StoryPicker.tsx` | Interaktív demó: a látogató kiválasztja a mai mesét |
 | `components/CategoryPicker.tsx` | Kategória-választó, a választás `localStorage`-ban marad |
 | `components/usePreferences.ts` | `useSyncExternalStore` alapú kategória-tároló |
@@ -47,11 +47,9 @@ Másold a `.env.example` fájlt `.env.local` néven, és töltsd ki:
 
 | Változó | Mire kell |
 | --- | --- |
-| `RESEND_API_KEY` | Resend API kulcs |
-| `SIGNUP_FROM_EMAIL` | Feladó (verifikált Resend domain kell hozzá) |
-| `SIGNUP_NOTIFY_TO` | Ide jön az értesítő minden új feliratkozásról |
+| `WEB3FORMS_ACCESS_KEY` | Web3Forms hozzáférési kulcs. A web3forms.com oldalon kérhető ki arra az e-mail címre, ahova az értesítéseket várod (`csanad.peter.czarth@gmail.com`); a kulcs azonnal megjön levélben. Ugyanez a megoldás fut a lelkekgyogyasza.hu és a budapest-dietetikus.hu oldalon is. |
 
-**Amíg ezek nincsenek beállítva, a feliratkozás nem tárolódik sehol**: az API 503-at ad,
+**Amíg ez nincs beállítva, a feliratkozás nem megy sehova**: az API 503-at ad,
 az űrlap pedig kiírja, hogy a regisztráció még nem élesedett, és mutat egy e-mail címet.
 Ez szándékos – nem akarunk úgy tenni, mintha felvennénk a címet.
 
@@ -59,7 +57,7 @@ Ez szándékos – nem akarunk úgy tenni, mintha felvennénk a címet.
 
 - [ ] Login / fiók (a próbaidőszak és a kategória-beállítások fiókhoz kötése)
 - [ ] Fizetés (5 000 Ft / hó, 10 nap trial után)
-- [ ] Resend: napi hármas kiküldése, nem csak admin-értesítő
+- [ ] Napi hármas kiküldése a feliratkozóknak (Resend vagy hasonló; a Web3Forms csak az admin-értesítőre való)
 - [ ] Mese-adatbázis és olvasófelület (`/mese/[slug]`)
 - [ ] Valódi domain + OG kép (jelenleg `zsuzsineni-mesei.hu` a placeholder az
       `app/layout.tsx`, `app/robots.ts` és `app/sitemap.ts` fájlokban)

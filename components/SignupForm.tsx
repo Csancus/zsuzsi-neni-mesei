@@ -50,10 +50,10 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
             : "bg-night-900/5 text-ink ring-1 ring-night-900/10"
         }`}
       >
-        <p className="font-semibold">Megvagy! 🌙</p>
+        <p className="font-semibold">Megjött, köszönjük. 🌙</p>
         <p className={dark ? "mt-1 text-cream/75" : "mt-1 text-ink-soft"}>
-          Küldtünk egy e-mailt a megerősítéshez. Az első három mese már holnap délután
-          érkezik.
+          Küldtünk egy e-mailt, kattints rá, és holnap délután már ott az első három
+          mese.
         </p>
       </div>
     );
@@ -94,26 +94,26 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
           disabled={status === "loading"}
           className="h-13 shrink-0 rounded-full bg-gold px-7 text-base font-semibold text-night-900 transition hover:bg-gold-soft disabled:opacity-60"
         >
-          {status === "loading" ? "Küldés…" : "Kezdem a 10 napot"}
+          {status === "loading" ? "Küldés…" : "Indulhat a 10 nap"}
         </button>
       </div>
 
       <p className={`mt-3 text-xs ${dark ? "text-cream/55" : "text-ink-soft"}`}>
-        Bankkártya nélkül. A 10 nap letelte előtt szólunk, egy kattintással lemondható.
+        Bankkártyát nem kérünk. A tizedik nap előtt írunk, hogy dönthess.
       </p>
 
       {status === "unavailable" && (
         <p className="mt-3 rounded-xl bg-gold/15 px-4 py-3 text-xs text-gold-soft ring-1 ring-gold/30">
-          A regisztráció még nem élesedett – írj addig a{" "}
+          A regisztráció még nem indult el. Írj addig a{" "}
           <a className="underline" href="mailto:hello@zsuzsineni-mesei.hu">
             hello@zsuzsineni-mesei.hu
           </a>{" "}
-          címre, és szólunk, amint indulunk.
+          címre, és szólunk, amint élesítjük.
         </p>
       )}
       {status === "error" && (
         <p className="mt-3 text-xs text-red-300">
-          Valami félresiklott. Próbáld újra, vagy írj a hello@zsuzsineni-mesei.hu címre.
+          Most nem sikerült elküldeni. Próbáld meg újra, vagy írj a hello@zsuzsineni-mesei.hu címre.
         </p>
       )}
     </form>

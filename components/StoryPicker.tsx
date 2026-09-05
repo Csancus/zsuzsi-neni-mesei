@@ -63,8 +63,8 @@ export function StoryPicker() {
         className="mt-6 text-center text-sm text-ink-soft"
       >
         {picked === null
-          ? "Kattints arra, amelyiket ma felolvasnád – nálatok a gyerek dönt."
-          : `„${demoStories[picked].title}” – mehet is a paplan alá. Holnap három új mese érkezik.`}
+          ? "Kattints arra, amelyiket felolvasnád. Nálatok ezt a gyerek dönti el."
+          : `Akkor ma ez lesz: „${demoStories[picked].title}”. Holnap jön a következő három.`}
       </p>
     </div>
   );
