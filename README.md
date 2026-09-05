@@ -24,7 +24,6 @@ npm run lint
 | Útvonal | Mi van benne |
 | --- | --- |
 | `app/page.tsx` | A teljes landing: hero, napi hármas, hogyan működik, kategóriák, előnyök, árak, GYIK, záró CTA |
-| `app/api/signup/route.ts` | Feliratkozás fogadása (validáció + honeypot + Web3Forms értesítő) |
 | `app/api/track/route.ts` | Kattintásszámláló (aggregált, süti és azonosító nélkül) |
 | `app/api/stats/route.ts` | A számok kiolvasása jelszóval |
 | `app/szamok/` | Belső statisztika-oldal (noindex) |
@@ -53,11 +52,24 @@ Másold a `.env.example` fájlt `.env.local` néven, és töltsd ki:
 | --- | --- |
 | `SZAMOK_PW` | Jelszó a `/szamok` oldalhoz |
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob írási token a kattintásszámlálóhoz. A Vercel Storage fülön létrehozott Blob store csatolásakor magától bekerül; lokálisan `vercel env pull` hozza le. |
-| `WEB3FORMS_ACCESS_KEY` | Web3Forms hozzáférési kulcs. **Alternatíva:** beírhatod a `lib/forms.ts` `HARDCODED_KEY` mezőjébe, mint a lelkekgyogyasza.hu és a budapest-dietetikus.hu oldalon – a Web3Forms kulcsa nem titok, azokon az oldalakon is látszik a HTML-ben. A kulcs a web3forms.com oldalon kérhető ki arra a címre, ahova az értesítéseket várod (`csanad.peter.czarth@gmail.com`). |
 
-**Amíg ez nincs beállítva, a feliratkozás nem megy sehova**: az API 503-at ad,
-az űrlap pedig kiírja, hogy a regisztráció még nem élesedett, és mutat egy e-mail címet.
-Ez szándékos – nem akarunk úgy tenni, mintha felvennénk a címet.
+## Feliratkozás (Web3Forms)
+
+Ugyanaz, ami a lelkekgyogyasza.hu és a budapest-dietetikus.hu oldalon fut, egy fontos
+tanulsággal: **a Web3Forms ingyenes csomagja csak natív, böngészőből induló űrlapküldést
+fogad el.** Szerverről hívva és böngészős `fetch`-csel is 403-at ad
+(*„Use our API in client side … Pro plan is required”*), az utóbbinál a CORS-preflight is
+elbukik. Ezért az űrlap sima `<form method="POST">`, ami a Web3Forms felé megy, és onnan a
+`redirect` mezőben megadott saját `/koszonom` oldalunkra tér vissza – így JavaScript nélkül
+is működik.
+
+A kulcs a `lib/forms.ts` fájlban van, nem környezeti változóban: a böngészőnek látnia kell,
+és a Web3Forms kulcsa amúgy sem titok (a testvéroldalakon is ott van a HTML-ben). Csak azt
+dönti el, melyik postaládába érkezik a levél.
+
+**Lokálisan a `redirect` nem működik**: a Web3Forms nem fogad el `localhost` címet, ezért
+fejlesztés közben a saját köszönőoldalukon köt ki a küldés. Éles domainen a `/koszonom`
+oldalra jön vissza.
 
 ## Kattintásmérés (`/szamok`)
 

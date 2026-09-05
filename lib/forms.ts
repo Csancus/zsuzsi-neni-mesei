@@ -1,19 +1,15 @@
 /**
- * Web3Forms hozzáférési kulcs – ugyanaz a megoldás, ami a lelkekgyogyasza.hu és a
- * budapest-dietetikus.hu oldalon is fut. Ott a kulcs be van írva a forráskódba,
- * itt is lehet így: a Web3Forms kulcsa nem titok, minden statikus oldalon látszik
- * a HTML-ben. Csak azt dönti el, melyik postaládába érkezzen a levél.
+ * Web3Forms – ugyanaz a megoldás, ami a lelkekgyogyasza.hu és a
+ * budapest-dietetikus.hu oldalon is fut.
  *
- * ⚠️ ÍRD IDE A KULCSOT, és ezzel él a feliratkozás:
- *     export const WEB3FORMS_KEY = "a1b2c3d4-....";
+ * FONTOS: az ingyenes csomag CSAK böngészőből engedi a hívást, szerverről 403-at
+ * ad ("Use our API in client side ... Pro plan is required"). Ezért megy az
+ * űrlap közvetlenül a kliensből, és ezért van a kulcs is itt, a forrásban –
+ * a testvéroldalakon is így van, a Web3Forms kulcsa nem titok. Csak azt dönti
+ * el, melyik postaládába érkezik a levél.
  *
- * A kulcsot a web3forms.com oldalon lehet kikérni a csanad.peter.czarth@gmail.com
- * címre; pillanatokon belül megérkezik levélben.
- *
- * Ha inkább környezeti változóban tartanád, a WEB3FORMS_ACCESS_KEY felülírja ezt.
+ * A kulcs a web3forms.com oldalon kérhető ki; cserélni ezt az egy sort kell.
  */
-const HARDCODED_KEY = "";
+export const WEB3FORMS_KEY = "4b7695ad-11b6-4ad0-a4fb-af3323920fe5";
 
-export function web3formsKey(): string | null {
-  return process.env.WEB3FORMS_ACCESS_KEY || HARDCODED_KEY || null;
-}
+export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";

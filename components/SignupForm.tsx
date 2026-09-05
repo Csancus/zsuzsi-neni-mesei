@@ -1,70 +1,68 @@
 "use client";
 
-import { TrackedLink } from "./TrackedLink";
+import { useRef, useState } from "react";
 
-import { useState } from "react";
+import { categories } from "@/lib/content";
+import { WEB3FORMS_ENDPOINT, WEB3FORMS_KEY } from "@/lib/forms";
 import { track } from "@/lib/track";
+import { TrackedLink } from "./TrackedLink";
 import { usePreferences } from "./usePreferences";
 
-type Status = "idle" | "loading" | "ok" | "unavailable" | "error";
+type Status = "idle" | "loading" | "unavailable";
 
 export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const { selected } = usePreferences();
-  const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const redirectRef = useRef<HTMLInputElement>(null);
 
   const dark = variant === "dark";
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (status === "loading") return;
-    setStatus("loading");
-    track("feliratkozas_kuldes", variant === "dark" ? "sötét űrlap" : "világos űrlap");
+  const chosen = categories
+    .filter((c) => selected.includes(c.id))
+    .map((c) => c.name)
+    .join(", ");
 
-    const form = new FormData(e.currentTarget);
-    try {
-      const res = await fetch("/api/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          categories: selected,
-          website: form.get("website") ?? "",
-        }),
-      });
-      if (res.ok) {
-        track("feliratkozas_siker");
-        setStatus("ok");
-        setEmail("");
-      } else if (res.status === 503) {
-        setStatus("unavailable");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
+  /**
+   * Natív űrlapküldés a Web3Forms felé. Nem AJAX: az ingyenes csomag a szerver
+   * felőli és a böngészős fetch-hívást is elutasítja, a sima form POST viszont
+   * megy (ugyanez fut a budapest-dietetikus.hu oldalon). Siker után a Web3Forms
+   * a `redirect` mezőben megadott saját oldalunkra irányít.
+   */
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    if (!WEB3FORMS_KEY) {
+      e.preventDefault();
+      setStatus("unavailable");
+      return;
     }
-  }
-
-  if (status === "ok") {
-    return (
-      <div
-        className={`rounded-2xl px-5 py-4 text-sm ${
-          dark
-            ? "bg-white/10 text-cream ring-1 ring-white/20"
-            : "bg-night-900/5 text-ink ring-1 ring-night-900/10"
-        }`}
-      >
-        <p className="font-semibold">Köszönöm szépen! 🌙</p>
-        <p className={dark ? "mt-1 text-cream/75" : "mt-1 text-ink-soft"}>
-          Megkaptam a jelentkezésedet, hamarosan írok.
-        </p>
-      </div>
-    );
+    if (redirectRef.current) {
+      redirectRef.current.value = `${window.location.origin}/koszonom`;
+    }
+    track("feliratkozas_kuldes", dark ? "sötét űrlap" : "világos űrlap");
+    setStatus("loading");
+    // nincs preventDefault – innen a böngésző küldi el az űrlapot
   }
 
   return (
-    <form onSubmit={onSubmit} className="w-full">
+    <form
+      action={WEB3FORMS_ENDPOINT}
+      method="POST"
+      onSubmit={onSubmit}
+      className="w-full"
+    >
+      <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+      <input type="hidden" name="subject" value="Új feliratkozó – Zsuzsi néni meséi" />
+      <input type="hidden" name="from_name" value="Zsuzsi néni meséi" />
+      <input type="hidden" name="Kategóriák" value={chosen || "(nem választott)"} readOnly />
+      <input type="hidden" name="redirect" ref={redirectRef} defaultValue="" />
+      {/* mézesbödön: a Web3Forms eldobja a küldést, ha ki van töltve */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        aria-hidden
+        style={{ display: "none" }}
+      />
+
       <div className="flex flex-col gap-3 sm:flex-row">
         <label className="sr-only" htmlFor={`email-${variant}`}>
           E-mail cím
@@ -75,23 +73,12 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
           name="email"
           required
           autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           placeholder="pelda@email.com"
           className={`h-13 min-w-0 flex-1 rounded-full px-5 text-base outline-none transition ${
             dark
               ? "bg-white/10 text-cream ring-1 ring-white/20 placeholder:text-cream/40 focus:ring-2 focus:ring-gold"
               : "bg-white text-ink ring-1 ring-cream-300 placeholder:text-ink-soft/60 focus:ring-2 focus:ring-gold"
           }`}
-        />
-        {/* mézesbödön: valódi látogató nem tölti ki */}
-        <input
-          type="text"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-          aria-hidden
-          className="pointer-events-none absolute size-0 opacity-0"
         />
         <button
           type="submit"
@@ -132,11 +119,6 @@ export function SignupForm({ variant = "dark" }: { variant?: "dark" | "light" })
             hello@zsuzsineni-mesei.hu
           </a>{" "}
           címre, és szólok, amint élesítem.
-        </p>
-      )}
-      {status === "error" && (
-        <p className="mt-3 text-xs text-red-300">
-          Most nem sikerült elküldeni. Próbáld meg újra, vagy írj a hello@zsuzsineni-mesei.hu címre.
         </p>
       )}
     </form>
