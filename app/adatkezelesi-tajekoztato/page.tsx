@@ -111,6 +111,54 @@ export default function AdatkezelesiTajekoztato() {
         tranzakció sikeres volt-e.
       </p>
 
+      <h2 id="google">2/A. Belépés Google-fiókkal</h2>
+      <p>
+        A mesetárba (<a href="https://zsuzsi-platform.vercel.app">zsuzsi-platform.vercel.app</a>) a
+        „Belépés Google-fiókkal” gombbal is beléphetsz. Ilyenkor a Google (Google Ireland Ltd.) a
+        jóváhagyásod után ezeket az adatokat adja át nekem:{" "}
+        <strong>
+          a Google-fiókod nevét, e-mail címét, a profilképed webcímét és a fiókod Google-azonosítóját
+        </strong>
+        . Más Google-adathoz (például a leveleidhez, a naptáradhoz, a névjegyeidhez vagy a
+        Drive-fájljaidhoz) nem kérek és nem kapok hozzáférést.
+      </p>
+      <p>
+        Ezeket kizárólag arra használom, hogy létrehozzam és azonosítsam a fiókodat, beléptesselek,
+        és a megadott e-mail címre küldjem a meséket (jogalap: szerződés teljesítése, GDPR 6. cikk
+        (1) b) pont). Nem használom őket hirdetésre, nem adom el, és nem adom át senkinek, kivéve a
+        tárhelyszolgáltatót (Supabase), amely adatfeldolgozóként tárolja őket. A Google-profilképedet
+        nem jelenítem meg.
+      </p>
+      <p>
+        Az adatokat a fiókod törléséig tárolom; a mesetárban a Fiókom → Fiók törlése gombbal bármikor
+        törölheted őket, vagy írj a <a href={`mailto:${provider.email}`}>{provider.email}</a> címre. A
+        hozzáférést a Google-fiókodban is visszavonhatod:{" "}
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noreferrer">
+          myaccount.google.com/permissions
+        </a>
+        . A Google API-kon keresztül kapott adatok használata megfelel a{" "}
+        <a
+          href="https://developers.google.com/terms/api-services-user-data-policy"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Google API Services User Data Policy
+        </a>{" "}
+        szabályainak, beleértve a „Limited Use” (korlátozott felhasználás) követelményeit.
+      </p>
+      <p lang="en">
+        <strong>Sign in with Google – summary in English.</strong> When you choose “Sign in with
+        Google” on our story library app, we receive only your Google account name, email address,
+        profile picture URL and Google account ID. We use this data solely to create and identify your
+        account, sign you in and send you the bedtime stories by email. We do not use Google user data
+        for advertising, we do not sell it, and we do not share it with anyone except our hosting
+        provider (Supabase), which stores it as a data processor. The data is kept until you delete
+        your account; you can delete it at any time in the app (My account → Delete account) or by
+        emailing {provider.email}, and you can revoke access at myaccount.google.com/permissions. Our
+        use and transfer of information received from Google APIs adheres to the Google API Services
+        User Data Policy, including the Limited Use requirements.
+      </p>
+
       <h2>3. Mi történik a 10 napos próbaidőszakban?</h2>
       <p>
         A próbaidőszak alatt csak az e-mail címedet és a bejelölt kategóriákat kezelem.
@@ -132,6 +180,15 @@ export default function AdatkezelesiTajekoztato() {
         </li>
         <li>
           <strong>{formProcessor.name}</strong> – {formProcessor.purpose}.
+        </li>
+        <li>
+          <strong>Supabase Inc.</strong> – a mesetár fiókjainak és adatbázisának tárolása (londoni
+          adatközpont; az Egyesült Királyságra az Európai Bizottság megfelelőségi határozata
+          vonatkozik).
+        </li>
+        <li>
+          <strong>Google Ireland Ltd.</strong> – a „Belépés Google-fiókkal” lehetőség (lásd a 2/A.
+          pontot); a Google-fiókodnál a Google önálló adatkezelő.
         </li>
         <li>
           <strong>
